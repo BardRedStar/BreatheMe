@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56484903270DE88900F4F04E /* LaunchScreen.storyboard */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
 		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
+		56D54044270DEECD00EC0C84 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 56D54043270DEECD00EC0C84 /* Reusable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D54044270DEECD00EC0C84 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +179,9 @@
 			dependencies = (
 			);
 			name = BreatheMe;
+			packageProductDependencies = (
+				56D54043270DEECD00EC0C84 /* Reusable */,
+			);
 			productName = BreatheMe;
 			productReference = 564848F2270DE88800F4F04E /* BreatheMe.app */;
 			productType = "com.apple.product-type.application";
@@ -204,6 +209,9 @@
 				Base,
 			);
 			mainGroup = 564848E9270DE88800F4F04E;
+			packageReferences = (
+				56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */,
+			);
 			productRefGroup = 564848F3270DE88800F4F04E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56D54043270DEECD00EC0C84 /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */ = {
