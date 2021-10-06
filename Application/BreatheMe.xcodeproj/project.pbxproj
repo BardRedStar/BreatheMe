@@ -3,29 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F5270DE88800F4F04E /* AppDelegate.swift */; };
-		564848F8270DE88800F4F04E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F7270DE88800F4F04E /* SceneDelegate.swift */; };
 		564848FA270DE88800F4F04E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F9270DE88800F4F04E /* ViewController.swift */; };
 		564848FD270DE88800F4F04E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564848FB270DE88800F4F04E /* Main.storyboard */; };
 		56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */; };
 		56484902270DE88900F4F04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56484901270DE88900F4F04E /* Assets.xcassets */; };
 		56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56484903270DE88900F4F04E /* LaunchScreen.storyboard */; };
+		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
+		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
+		56D54044270DEECD00EC0C84 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 56D54043270DEECD00EC0C84 /* Reusable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		564848F2270DE88800F4F04E /* BreatheMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564848F5270DE88800F4F04E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		564848F7270DE88800F4F04E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		564848F9270DE88800F4F04E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		564848FC270DE88800F4F04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		564848FF270DE88800F4F04E /* BreatheMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreatheMe.xcdatamodel; sourceTree = "<group>"; };
 		56484901270DE88900F4F04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56484904270DE88900F4F04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56484906270DE88900F4F04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D54035270DEBD600EC0C84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		56D5403A270DECB000EC0C84 /* SetuppableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuppableViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D54044270DEECD00EC0C84 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +62,105 @@
 		564848F4270DE88800F4F04E /* BreatheMe */ = {
 			isa = PBXGroup;
 			children = (
-				564848F5270DE88800F4F04E /* AppDelegate.swift */,
-				564848F7270DE88800F4F04E /* SceneDelegate.swift */,
-				564848F9270DE88800F4F04E /* ViewController.swift */,
-				564848FB270DE88800F4F04E /* Main.storyboard */,
-				56484901270DE88900F4F04E /* Assets.xcassets */,
-				56484903270DE88900F4F04E /* LaunchScreen.storyboard */,
+				5648490E270DEA0100F4F04E /* UI Components */,
+				56484911270DEA1400F4F04E /* CoreData */,
+				56484910270DEA0E00F4F04E /* Modules */,
+				5648490F270DEA0A00F4F04E /* Utils */,
+				56484912270DEA1B00F4F04E /* Resources */,
 				56484906270DE88900F4F04E /* Info.plist */,
-				564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */,
 			);
 			path = BreatheMe;
+			sourceTree = "<group>";
+		};
+		5648490E270DEA0100F4F04E /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				56D5403A270DECB000EC0C84 /* SetuppableViews.swift */,
+				56D54040270DED8F00EC0C84 /* Views */,
+				56D5403E270DED7D00EC0C84 /* Buttons */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		5648490F270DEA0A00F4F04E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		56484910270DEA0E00F4F04E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				56D54039270DEC3500EC0C84 /* Main */,
+				564848F5270DE88800F4F04E /* AppDelegate.swift */,
+				56484903270DE88900F4F04E /* LaunchScreen.storyboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		56484911270DEA1400F4F04E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				56D5403F270DED8600EC0C84 /* Models */,
+				564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		56484912270DEA1B00F4F04E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56D54033270DEBBF00EC0C84 /* Sounds */,
+				56D54032270DEBB900EC0C84 /* Fonts */,
+				56484901270DE88900F4F04E /* Assets.xcassets */,
+				56D54035270DEBD600EC0C84 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		56D54032270DEBB900EC0C84 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		56D54033270DEBBF00EC0C84 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		56D54039270DEC3500EC0C84 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				564848F9270DE88800F4F04E /* ViewController.swift */,
+				564848FB270DE88800F4F04E /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		56D5403E270DED7D00EC0C84 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		56D5403F270DED8600EC0C84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56D54040270DED8F00EC0C84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +179,9 @@
 			dependencies = (
 			);
 			name = BreatheMe;
+			packageProductDependencies = (
+				56D54043270DEECD00EC0C84 /* Reusable */,
+			);
 			productName = BreatheMe;
 			productReference = 564848F2270DE88800F4F04E /* BreatheMe.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +209,9 @@
 				Base,
 			);
 			mainGroup = 564848E9270DE88800F4F04E;
+			packageReferences = (
+				56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */,
+			);
 			productRefGroup = 564848F3270DE88800F4F04E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */,
+				56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */,
 				56484902270DE88900F4F04E /* Assets.xcassets in Resources */,
 				564848FD270DE88800F4F04E /* Main.storyboard in Resources */,
 			);
@@ -142,8 +242,8 @@
 			files = (
 				564848FA270DE88800F4F04E /* ViewController.swift in Sources */,
 				564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */,
-				564848F8270DE88800F4F04E /* SceneDelegate.swift in Sources */,
 				56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */,
+				56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56D54043270DEECD00EC0C84 /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */ = {
