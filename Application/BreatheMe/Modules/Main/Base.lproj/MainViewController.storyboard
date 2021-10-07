@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acR-fw-1V0">
+                            <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acR-fw-1V0">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="35E-fi-awQ">
@@ -29,10 +29,29 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfT-Gx-wcL" customClass="MainBreatheButton" customModule="BreatheMe" customModuleProvider="target">
+                                <rect key="frame" x="107" y="353" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MWD-ec-dNS"/>
+                                    <constraint firstAttribute="height" constant="200" id="iv9-FX-5c2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Breathe Me"/>
+                                <connections>
+                                    <action selector="breatheAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OL0-Uw-Qxn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OfT-Gx-wcL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0fq-kh-MT0"/>
+                            <constraint firstItem="OfT-Gx-wcL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I3y-Lh-xZF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="breatheButton" destination="OfT-Gx-wcL" id="bIr-dv-PHG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

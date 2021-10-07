@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5606B781270F4D5300EA177A /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5606B780270F4D5300EA177A /* Recorder.swift */; };
 		564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F5270DE88800F4F04E /* AppDelegate.swift */; };
 		564848FA270DE88800F4F04E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F9270DE88800F4F04E /* MainViewController.swift */; };
 		564848FD270DE88800F4F04E /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564848FB270DE88800F4F04E /* MainViewController.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5606B780270F4D5300EA177A /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		564848F2270DE88800F4F04E /* BreatheMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564848F5270DE88800F4F04E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564848F9270DE88800F4F04E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5606B77F270F4D3F00EA177A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				56D5404D270DEFDE00EC0C84 /* DataManager.swift */,
+				5606B780270F4D5300EA177A /* Recorder.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		564848E9270DE88800F4F04E = {
 			isa = PBXGroup;
 			children = (
@@ -187,8 +198,8 @@
 		56D54049270DEFB900EC0C84 /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				5606B77F270F4D3F00EA177A /* Managers */,
 				56D5404A270DEFCD00EC0C84 /* AppSession.swift */,
-				56D5404D270DEFDE00EC0C84 /* DataManager.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -299,6 +310,7 @@
 				56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */,
 				56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */,
 				56D54051270DF01B00EC0C84 /* MainControllerViewModel.swift in Sources */,
+				5606B781270F4D5300EA177A /* Recorder.swift in Sources */,
 				56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */,
 				564848FA270DE88800F4F04E /* MainViewController.swift in Sources */,
 				56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */,

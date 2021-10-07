@@ -10,6 +10,10 @@ import Reusable
 
 class MainViewController: UIViewController, StoryboardBased {
 
+    // MARK: - Outlets
+
+    @IBOutlet private weak var breatheButton: MainBreatheButton!
+
     // MARK: - Properties
 
     private var viewModel: MainControllerViewModel!
@@ -28,6 +32,11 @@ class MainViewController: UIViewController, StoryboardBased {
         super.viewDidLoad()
 
         navigationItem.title = "Main"
+    }
+
+
+    @IBAction private func breatheAction(_ sender: Any) {
+        print("Breathe")
     }
 }
 

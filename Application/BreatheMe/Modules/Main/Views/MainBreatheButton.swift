@@ -5,7 +5,7 @@
 //  Created by Denis Kovalev on 06.10.2021.
 //
 
-import Foundation
+import UIKit
 
 class MainBreatheButton: SetuppableButton {
 
@@ -15,6 +15,11 @@ class MainBreatheButton: SetuppableButton {
         super.setup()
 
         setTitle("Main-Breathe-Button-Title".localized(), for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        titleLabel?.textColor = UIColor(named: "primary")
+
+        layer.borderWidth = 1
+        layer.borderColor = UIColor(named: "border")?.cgColor
     }
 
     override func layoutSubviews() {
