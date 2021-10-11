@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,6 @@
 		56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56484903270DE88900F4F04E /* LaunchScreen.storyboard */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
 		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
-		56D54044270DEECD00EC0C84 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 56D54043270DEECD00EC0C84 /* Reusable */; };
 		56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404A270DEFCD00EC0C84 /* AppSession.swift */; };
 		56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404D270DEFDE00EC0C84 /* DataManager.swift */; };
 		56D54051270DF01B00EC0C84 /* MainControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D54050270DF01B00EC0C84 /* MainControllerViewModel.swift */; };
@@ -53,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D54044270DEECD00EC0C84 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +89,7 @@
 				5648490E270DEA0100F4F04E /* UI Components */,
 				56484911270DEA1400F4F04E /* CoreData */,
 				56D54053270DF10A00EC0C84 /* Coordination */,
-				56D54049270DEFB900EC0C84 /* Session */,
+				56D54049270DEFB900EC0C84 /* Dependencies */,
 				56484910270DEA0E00F4F04E /* Modules */,
 				5648490F270DEA0A00F4F04E /* Utils */,
 				56D5405B270DF63F00EC0C84 /* Extensions */,
@@ -195,13 +193,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		56D54049270DEFB900EC0C84 /* Session */ = {
+		56D54049270DEFB900EC0C84 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				5606B77F270F4D3F00EA177A /* Managers */,
 				56D5404A270DEFCD00EC0C84 /* AppSession.swift */,
 			);
-			path = Session;
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		56D54053270DF10A00EC0C84 /* Coordination */ = {
@@ -245,7 +243,6 @@
 			);
 			name = BreatheMe;
 			packageProductDependencies = (
-				56D54043270DEECD00EC0C84 /* Reusable */,
 			);
 			productName = BreatheMe;
 			productReference = 564848F2270DE88800F4F04E /* BreatheMe.app */;
@@ -276,7 +273,6 @@
 			);
 			mainGroup = 564848E9270DE88800F4F04E;
 			packageReferences = (
-				56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */,
 			);
 			productRefGroup = 564848F3270DE88800F4F04E /* Products */;
 			projectDirPath = "";
@@ -530,25 +526,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AliSoftware/Reusable";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		56D54043270DEECD00EC0C84 /* Reusable */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 56D54042270DEECD00EC0C84 /* XCRemoteSwiftPackageReference "Reusable" */;
-			productName = Reusable;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */ = {

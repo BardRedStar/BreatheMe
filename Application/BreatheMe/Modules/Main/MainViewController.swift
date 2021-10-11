@@ -18,6 +18,8 @@ class MainViewController: UIViewController, StoryboardBased {
 
     private var viewModel: MainControllerViewModel!
 
+    private lazy var recorder = Recorder(parentController: self)
+
     // MARK: - Initialization
 
     class func instantiate(viewModel: MainControllerViewModel) -> MainViewController {
@@ -36,7 +38,14 @@ class MainViewController: UIViewController, StoryboardBased {
 
 
     @IBAction private func breatheAction(_ sender: Any) {
-        print("Breathe")
+        if viewModel.isBreathing {
+            print("Stop breathing")
+            recorder.stopRecording()
+        } else {
+            print("Breathe")
+            recorder.startRecording()
+        }
+        viewModel.isBreathing.toggle()
     }
 }
 

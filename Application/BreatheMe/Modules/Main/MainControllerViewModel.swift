@@ -11,6 +11,8 @@ class MainControllerViewModel {
 
     let session: AppSession
 
+    var isBreathing: Bool = false
+
     init(session: AppSession) {
         self.session = session
     }
