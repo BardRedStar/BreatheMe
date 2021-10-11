@@ -8,11 +8,11 @@
 import AVFoundation
 import UIKit
 
-class Recorder {
+class BreatheRecorder {
 
     // MARK: - Output
 
-    var didCancelPermissionAlert: (() -> Void)? = nil
+    var didRecordVolumeValue: ((Double) -> Void)? = nil
 
     // MARK: - Properties
 
@@ -21,7 +21,8 @@ class Recorder {
     private weak var parentController: UIViewController?
     private var isPermissionGranted: Bool = false
 
-    private var audioMetricsTimer: Timer? = nil
+    var isFakeMode: Bool = false
+    private var fakeValuesTimer: Timer? = nil
 
     // MARK: - Initialization
 
@@ -31,6 +32,12 @@ class Recorder {
 
     // MARK: - Recording methods
     func startRecording() {
+
+        if isFakeMode {
+            generateFakeValues()
+            return
+        }
+
         requestPermissionIfNeeded()
 
         if isPermissionGranted {
@@ -39,6 +46,12 @@ class Recorder {
     }
 
     func stopRecording() {
+
+        if isFakeMode {
+            stopFakeValuesGeneration()
+            return
+        }
+
         if engine.isRunning {
             engine.mainMixerNode.removeTap(onBus: 0)
             engine.stop()
@@ -143,9 +156,7 @@ class Recorder {
         let controller = UIAlertController(title: "Microphone permission denied",
                                            message: "You've denied the microphone permission. App can't hear your breathe, so, please, go to settings and enable permission from there.",
                                            preferredStyle: .alert)
-        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
-            self?.didCancelPermissionAlert?()
-        })
+        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         controller.addAction(UIAlertAction(title: "Open Settings", style: .default) { _ in
             if let appSettings = URL(string: UIApplication.openSettingsURLString) {
@@ -154,5 +165,32 @@ class Recorder {
         })
 
         parent.present(controller, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Fake mode
+
+extension BreatheRecorder {
+
+    private static var fakeValuesCount: Int = 0
+
+    func generateFakeValues() {
+        fakeValuesTimer?.invalidate()
+        fakeValuesTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
+            let value: Double
+            switch Self.fakeValuesCount {
+            case 0..<25: value = 20
+            case 25..<46: value = 0
+            case 46..<60: value = 80
+            case 60..<80: value = 0
+            default: value = 0
+            }
+            self?.didRecordVolumeValue?(value)
+            Self.fakeValuesCount = (Self.fakeValuesCount + 1) % 80
+        }
+    }
+
+    func stopFakeValuesGeneration() {
+        fakeValuesTimer?.invalidate()
     }
 }

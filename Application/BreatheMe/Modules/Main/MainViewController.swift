@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import Reusable
 
-class MainViewController: UIViewController, StoryboardBased {
+class MainViewController: UIViewController {
 
     // MARK: - Outlets
 
@@ -18,12 +17,13 @@ class MainViewController: UIViewController, StoryboardBased {
 
     private var viewModel: MainControllerViewModel!
 
-    private lazy var recorder = Recorder(parentController: self)
+    private lazy var recorder = BreatheRecorder(parentController: self)
+    private lazy var processor = BreatheProcessor()
 
     // MARK: - Initialization
 
     class func instantiate(viewModel: MainControllerViewModel) -> MainViewController {
-        let controller = MainViewController.instantiate()
+        let controller = UIStoryboard(name: "MainViewController", bundle: nil).instantiateInitialViewController() as! MainViewController
         controller.viewModel = viewModel
         return controller
     }
@@ -34,6 +34,17 @@ class MainViewController: UIViewController, StoryboardBased {
         super.viewDidLoad()
 
         navigationItem.title = "Main"
+
+        configureRecorder()
+    }
+
+    private func configureRecorder() {
+
+        recorder.isFakeMode = true
+
+        recorder.didRecordVolumeValue = { [weak self] value in
+            self?.processor.processNewVolumeValue(value)
+        }
     }
 
 

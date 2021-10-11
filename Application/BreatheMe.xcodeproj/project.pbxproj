@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5606B781270F4D5300EA177A /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5606B780270F4D5300EA177A /* Recorder.swift */; };
+		5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5606B780270F4D5300EA177A /* BreatheRecorder.swift */; };
 		564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F5270DE88800F4F04E /* AppDelegate.swift */; };
 		564848FA270DE88800F4F04E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F9270DE88800F4F04E /* MainViewController.swift */; };
 		564848FD270DE88800F4F04E /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564848FB270DE88800F4F04E /* MainViewController.storyboard */; };
 		56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */; };
 		56484902270DE88900F4F04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56484901270DE88900F4F04E /* Assets.xcassets */; };
 		56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56484903270DE88900F4F04E /* LaunchScreen.storyboard */; };
+		5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5696FFF727148624001E6A27 /* BreatheProcessor.swift */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
 		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
 		56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404A270DEFCD00EC0C84 /* AppSession.swift */; };
@@ -26,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5606B780270F4D5300EA177A /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		5606B780270F4D5300EA177A /* BreatheRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheRecorder.swift; sourceTree = "<group>"; };
 		564848F2270DE88800F4F04E /* BreatheMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564848F5270DE88800F4F04E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564848F9270DE88800F4F04E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 		56484901270DE88900F4F04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56484904270DE88900F4F04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56484906270DE88900F4F04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5696FFF727148624001E6A27 /* BreatheProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheProcessor.swift; sourceTree = "<group>"; };
 		56D54035270DEBD600EC0C84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		56D5403A270DECB000EC0C84 /* SetuppableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuppableViews.swift; sourceTree = "<group>"; };
 		56D5404A270DEFCD00EC0C84 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
@@ -62,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				56D5404D270DEFDE00EC0C84 /* DataManager.swift */,
-				5606B780270F4D5300EA177A /* Recorder.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -147,6 +148,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5696FFFA2714862C001E6A27 /* Breathe */ = {
+			isa = PBXGroup;
+			children = (
+				5606B780270F4D5300EA177A /* BreatheRecorder.swift */,
+				5696FFF727148624001E6A27 /* BreatheProcessor.swift */,
+			);
+			path = Breathe;
+			sourceTree = "<group>";
+		};
 		56D54032270DEBB900EC0C84 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		56D54049270DEFB900EC0C84 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				5696FFFA2714862C001E6A27 /* Breathe */,
 				5606B77F270F4D3F00EA177A /* Managers */,
 				56D5404A270DEFCD00EC0C84 /* AppSession.swift */,
 			);
@@ -306,7 +317,8 @@
 				56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */,
 				56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */,
 				56D54051270DF01B00EC0C84 /* MainControllerViewModel.swift in Sources */,
-				5606B781270F4D5300EA177A /* Recorder.swift in Sources */,
+				5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */,
+				5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */,
 				56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */,
 				564848FA270DE88800F4F04E /* MainViewController.swift in Sources */,
 				56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */,
