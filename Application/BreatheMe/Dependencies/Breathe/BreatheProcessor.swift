@@ -7,21 +7,51 @@
 
 import Foundation
 
-protocol BreatheProcessorDelegate: AnyObject {
-    func breatheProcessor(_ processor: BreatheProcessor, didChangeStageTo stage: BreatheProcessor.Stage)
-}
-
 /// A class, which processes volume and detects breathe stages
 class BreatheProcessor: NSObject {
 
-    enum Stage {
-        case inhale, exhale
-    }
+    // MARK: - Output
 
-    private var threshold: Int = 0
+    var didChangeStage: ((BreatheStage) -> Void)?
+
+    // MARK: - Properties
+
+    private var confirmedStage: BreatheStage = .delay
+    private var newStageStreak: Int = 0
+    private var newSupposedStage: BreatheStage = .delay
+
+    // MARK: - Processing methods
+
+    func reset() {
+        confirmedStage = .delay
+        newStageStreak = 0
+        newSupposedStage = .delay
+    }
 
     func processNewVolumeValue(_ value: Double) {
-        print(value)
-    }
+        let stage: BreatheStage
+        switch value {
+        case 10..<50: stage = .inhale
+        case 50...: stage = .exhale
+        default: stage = .delay
+        }
 
+        if stage == confirmedStage {
+            newSupposedStage = stage
+            newStageStreak = 0
+            return
+        }
+
+        if stage == newSupposedStage {
+            newStageStreak += 1
+        } else {
+            newSupposedStage = stage
+            newStageStreak = 1
+        }
+
+        if newStageStreak >= 3 {
+            confirmedStage = newSupposedStage
+            didChangeStage?(confirmedStage)
+        }
+    }
 }

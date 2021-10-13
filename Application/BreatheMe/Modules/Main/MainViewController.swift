@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
         navigationItem.title = "Main"
 
         configureRecorder()
+        configureProcessor()
     }
 
     private func configureRecorder() {
@@ -44,6 +45,14 @@ class MainViewController: UIViewController {
 
         recorder.didRecordVolumeValue = { [weak self] value in
             self?.processor.processNewVolumeValue(value)
+        }
+    }
+
+    private func configureProcessor() {
+        processor.didChangeStage = { [weak self] stage in
+            guard let self = self else { return }
+
+            self.viewModel.saveNewStage(stage)
         }
     }
 

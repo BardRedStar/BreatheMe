@@ -16,4 +16,8 @@ class MainControllerViewModel {
     init(session: AppSession) {
         self.session = session
     }
+
+    func saveBreatheStage(_ stage: BreatheStage) {
+        
+    }
 }

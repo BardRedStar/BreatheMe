@@ -15,6 +15,7 @@
 		56484902270DE88900F4F04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56484901270DE88900F4F04E /* Assets.xcassets */; };
 		56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56484903270DE88900F4F04E /* LaunchScreen.storyboard */; };
 		5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5696FFF727148624001E6A27 /* BreatheProcessor.swift */; };
+		56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0BEF927173995007BA6B4 /* BreatheStage.swift */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
 		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
 		56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404A270DEFCD00EC0C84 /* AppSession.swift */; };
@@ -37,6 +38,7 @@
 		56484904270DE88900F4F04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56484906270DE88900F4F04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5696FFF727148624001E6A27 /* BreatheProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheProcessor.swift; sourceTree = "<group>"; };
+		56B0BEF927173995007BA6B4 /* BreatheStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheStage.swift; sourceTree = "<group>"; };
 		56D54035270DEBD600EC0C84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		56D5403A270DECB000EC0C84 /* SetuppableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuppableViews.swift; sourceTree = "<group>"; };
 		56D5404A270DEFCD00EC0C84 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		56484910270DEA0E00F4F04E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				56B0BEF727173988007BA6B4 /* Common */,
 				56D54039270DEC3500EC0C84 /* Main */,
 				564848F5270DE88800F4F04E /* AppDelegate.swift */,
 				56484903270DE88900F4F04E /* LaunchScreen.storyboard */,
@@ -155,6 +158,22 @@
 				5696FFF727148624001E6A27 /* BreatheProcessor.swift */,
 			);
 			path = Breathe;
+			sourceTree = "<group>";
+		};
+		56B0BEF727173988007BA6B4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				56B0BEF82717398C007BA6B4 /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		56B0BEF82717398C007BA6B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56B0BEF927173995007BA6B4 /* BreatheStage.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		56D54032270DEBB900EC0C84 /* Fonts */ = {
@@ -320,6 +339,7 @@
 				5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */,
 				5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */,
 				56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */,
+				56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */,
 				564848FA270DE88800F4F04E /* MainViewController.swift in Sources */,
 				56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */,
 				564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */,
