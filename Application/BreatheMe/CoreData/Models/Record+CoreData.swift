@@ -17,4 +17,9 @@ extension Record {
     @NSManaged public var date: Date?
     @NSManaged public var session: Session?
 
+    static var entityName = "Record"
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Record> {
+        return NSFetchRequest<Record>(entityName: Self.entityName)
+    }
 }

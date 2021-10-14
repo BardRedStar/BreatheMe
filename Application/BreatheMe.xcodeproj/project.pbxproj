@@ -28,8 +28,8 @@
 		56E27E8927187B93003E682A /* Session+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E8527187B93003E682A /* Session+CoreData.swift */; };
 		56E27E8B27187B93003E682A /* Record+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E8727187B93003E682A /* Record+CoreData.swift */; };
 		56E27E9527187D17003E682A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9427187D17003E682A /* Database.swift */; };
-		56E27E99271881D0003E682A /* Session+CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E98271881D0003E682A /* Session+CoreDataDao.swift */; };
-		56E27E9C271881DB003E682A /* Record+CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9B271881DB003E682A /* Record+CoreDataDao.swift */; };
+		56E27E99271881D0003E682A /* SessionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E98271881D0003E682A /* SessionDao.swift */; };
+		56E27E9C271881DB003E682A /* RecordDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9B271881DB003E682A /* RecordDao.swift */; };
 		56E27EA027188256003E682A /* SessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9F27188256003E682A /* SessionListViewController.swift */; };
 		56E27EA32718825F003E682A /* SessionListControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27EA22718825F003E682A /* SessionListControllerViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -59,8 +59,8 @@
 		56E27E8527187B93003E682A /* Session+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreData.swift"; sourceTree = "<group>"; };
 		56E27E8727187B93003E682A /* Record+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreData.swift"; sourceTree = "<group>"; };
 		56E27E9427187D17003E682A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		56E27E98271881D0003E682A /* Session+CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataDao.swift"; sourceTree = "<group>"; };
-		56E27E9B271881DB003E682A /* Record+CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataDao.swift"; sourceTree = "<group>"; };
+		56E27E98271881D0003E682A /* SessionDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDao.swift; sourceTree = "<group>"; };
+		56E27E9B271881DB003E682A /* RecordDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDao.swift; sourceTree = "<group>"; };
 		56E27E9F27188256003E682A /* SessionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListViewController.swift; sourceTree = "<group>"; };
 		56E27EA22718825F003E682A /* SessionListControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 		56484910270DEA0E00F4F04E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				56E27EA527188265003E682A /* New Group */,
+				56E27EA527188265003E682A /* RecordList */,
 				56E27E9E2718823F003E682A /* SessionList */,
 				56B0BEF727173988007BA6B4 /* Common */,
 				56D54039270DEC3500EC0C84 /* Main */,
@@ -279,8 +279,8 @@
 		56E27E97271881C2003E682A /* Dao */ = {
 			isa = PBXGroup;
 			children = (
-				56E27E98271881D0003E682A /* Session+CoreDataDao.swift */,
-				56E27E9B271881DB003E682A /* Record+CoreDataDao.swift */,
+				56E27E98271881D0003E682A /* SessionDao.swift */,
+				56E27E9B271881DB003E682A /* RecordDao.swift */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -294,11 +294,11 @@
 			path = SessionList;
 			sourceTree = "<group>";
 		};
-		56E27EA527188265003E682A /* New Group */ = {
+		56E27EA527188265003E682A /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group";
+			path = RecordList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,7 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56E27E99271881D0003E682A /* Session+CoreDataDao.swift in Sources */,
+				56E27E99271881D0003E682A /* SessionDao.swift in Sources */,
 				56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */,
 				56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */,
 				56E27EA32718825F003E682A /* SessionListControllerViewModel.swift in Sources */,
@@ -389,7 +389,7 @@
 				56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */,
 				56E27E8B27187B93003E682A /* Record+CoreData.swift in Sources */,
 				564848FA270DE88800F4F04E /* MainViewController.swift in Sources */,
-				56E27E9C271881DB003E682A /* Record+CoreDataDao.swift in Sources */,
+				56E27E9C271881DB003E682A /* RecordDao.swift in Sources */,
 				56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */,
 				564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */,
 				56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */,

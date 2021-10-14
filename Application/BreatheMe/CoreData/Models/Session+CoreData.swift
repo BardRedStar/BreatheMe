@@ -13,7 +13,13 @@ import CoreData
 public class Session: NSManagedObject, Identifiable {}
 
 extension Session {
-    @NSManaged public var startDate: Date?
-    @NSManaged public var endDate: Date?
-    @NSManaged public var record: NSSet?
+    @NSManaged var startDate: Date?
+    @NSManaged var endDate: Date?
+    @NSManaged var record: NSSet?
+
+    static var entityName = "Session"
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Session> {
+        return NSFetchRequest<Session>(entityName: Self.entityName)
+    }
 }
