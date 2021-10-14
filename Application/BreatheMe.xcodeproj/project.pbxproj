@@ -25,6 +25,13 @@
 		56D54059270DF52400EC0C84 /* MainBreatheButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D54058270DF52400EC0C84 /* MainBreatheButton.swift */; };
 		56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5405C270DF64E00EC0C84 /* String+Extensions.swift */; };
 		56D54069270DF97700EC0C84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D5406B270DF97700EC0C84 /* Localizable.strings */; };
+		56E27E8927187B93003E682A /* Session+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E8527187B93003E682A /* Session+CoreData.swift */; };
+		56E27E8B27187B93003E682A /* Record+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E8727187B93003E682A /* Record+CoreData.swift */; };
+		56E27E9527187D17003E682A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9427187D17003E682A /* Database.swift */; };
+		56E27E99271881D0003E682A /* Session+CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E98271881D0003E682A /* Session+CoreDataDao.swift */; };
+		56E27E9C271881DB003E682A /* Record+CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9B271881DB003E682A /* Record+CoreDataDao.swift */; };
+		56E27EA027188256003E682A /* SessionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9F27188256003E682A /* SessionListViewController.swift */; };
+		56E27EA32718825F003E682A /* SessionListControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27EA22718825F003E682A /* SessionListControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,13 @@
 		56D5405C270DF64E00EC0C84 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		56D5406A270DF97700EC0C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56D5406D270DF99200EC0C84 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		56E27E8527187B93003E682A /* Session+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreData.swift"; sourceTree = "<group>"; };
+		56E27E8727187B93003E682A /* Record+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreData.swift"; sourceTree = "<group>"; };
+		56E27E9427187D17003E682A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		56E27E98271881D0003E682A /* Session+CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataDao.swift"; sourceTree = "<group>"; };
+		56E27E9B271881DB003E682A /* Record+CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataDao.swift"; sourceTree = "<group>"; };
+		56E27E9F27188256003E682A /* SessionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListViewController.swift; sourceTree = "<group>"; };
+		56E27EA22718825F003E682A /* SessionListControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,8 @@
 		56484910270DEA0E00F4F04E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				56E27EA527188265003E682A /* New Group */,
+				56E27E9E2718823F003E682A /* SessionList */,
 				56B0BEF727173988007BA6B4 /* Common */,
 				56D54039270DEC3500EC0C84 /* Main */,
 				564848F5270DE88800F4F04E /* AppDelegate.swift */,
@@ -133,8 +149,10 @@
 		56484911270DEA1400F4F04E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				56E27E97271881C2003E682A /* Dao */,
 				56D5403F270DED8600EC0C84 /* Models */,
 				564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */,
+				56E27E9427187D17003E682A /* Database.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -211,6 +229,8 @@
 		56D5403F270DED8600EC0C84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				56E27E8527187B93003E682A /* Session+CoreData.swift */,
+				56E27E8727187B93003E682A /* Record+CoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +274,31 @@
 				56D5405C270DF64E00EC0C84 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		56E27E97271881C2003E682A /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				56E27E98271881D0003E682A /* Session+CoreDataDao.swift */,
+				56E27E9B271881DB003E682A /* Record+CoreDataDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		56E27E9E2718823F003E682A /* SessionList */ = {
+			isa = PBXGroup;
+			children = (
+				56E27E9F27188256003E682A /* SessionListViewController.swift */,
+				56E27EA22718825F003E682A /* SessionListControllerViewModel.swift */,
+			);
+			path = SessionList;
+			sourceTree = "<group>";
+		};
+		56E27EA527188265003E682A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,18 +378,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E27E99271881D0003E682A /* Session+CoreDataDao.swift in Sources */,
 				56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */,
 				56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */,
+				56E27EA32718825F003E682A /* SessionListControllerViewModel.swift in Sources */,
 				56D54051270DF01B00EC0C84 /* MainControllerViewModel.swift in Sources */,
 				5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */,
 				5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */,
 				56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */,
 				56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */,
+				56E27E8B27187B93003E682A /* Record+CoreData.swift in Sources */,
 				564848FA270DE88800F4F04E /* MainViewController.swift in Sources */,
+				56E27E9C271881DB003E682A /* Record+CoreDataDao.swift in Sources */,
 				56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */,
 				564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */,
 				56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */,
 				56D54059270DF52400EC0C84 /* MainBreatheButton.swift in Sources */,
+				56E27E8927187B93003E682A /* Session+CoreData.swift in Sources */,
+				56E27EA027188256003E682A /* SessionListViewController.swift in Sources */,
+				56E27E9527187D17003E682A /* Database.swift in Sources */,
 				56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

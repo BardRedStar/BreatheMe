@@ -39,6 +39,8 @@ class MainViewController: UIViewController {
         configureProcessor()
     }
 
+    // MARK: - UI Methods
+
     private func configureRecorder() {
 
         recorder.isFakeMode = true
@@ -52,10 +54,11 @@ class MainViewController: UIViewController {
         processor.didChangeStage = { [weak self] stage in
             guard let self = self else { return }
 
-            self.viewModel.saveNewStage(stage)
+            self.viewModel.saveBreatheStage(stage)
         }
     }
 
+    // MARK: - UI Callbacks
 
     @IBAction private func breatheAction(_ sender: Any) {
         if viewModel.isBreathing {
