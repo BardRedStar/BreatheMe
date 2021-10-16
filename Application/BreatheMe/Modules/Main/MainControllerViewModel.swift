@@ -19,5 +19,6 @@ class MainControllerViewModel {
 
     func saveBreatheStage(_ stage: BreatheStage) {
         
+        print(stage)
     }
 }
