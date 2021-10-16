@@ -15,14 +15,19 @@ class SessionDao {
         self.context = context
     }
 
-    func insert(startDate: Date, endDate: Date, records: NSSet) {
+    func insert(startDate: Date, endDate: Date) {
         guard let session = NSEntityDescription.insertNewObject(forEntityName: Session.entityName, into: context) as? Session else {
             return
         }
 
         session.startDate = startDate
         session.endDate = endDate
-        session.record = records
     }
 
+    func getSessions(context: NSManagedObjectContext) throws -> [Session] {
+        let request: NSFetchRequest<Session> = Session.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Session.startDate), ascending: false)]
+        
+        return try context.fetch(request)
+    }
 }

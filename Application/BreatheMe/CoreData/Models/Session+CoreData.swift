@@ -15,7 +15,7 @@ public class Session: NSManagedObject, Identifiable {}
 extension Session {
     @NSManaged var startDate: Date
     @NSManaged var endDate: Date?
-    @NSManaged var record: NSSet
+    @NSManaged var record: NSSet?
 
     static var entityName = "Session"
 

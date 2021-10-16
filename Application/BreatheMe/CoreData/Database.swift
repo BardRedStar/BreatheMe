@@ -9,6 +9,10 @@ import CoreData
 
 class Database {
 
+    var context: NSManagedObjectContext {
+        persistentContainer.viewContext
+    }
+
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "BreatheMe")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -20,15 +24,9 @@ class Database {
     }()
 
 
-    func saveContext () {
-        let context = persistentContainer.viewContext
+    func saveContext() throws {
         if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+            try context.save()
         }
     }
 
