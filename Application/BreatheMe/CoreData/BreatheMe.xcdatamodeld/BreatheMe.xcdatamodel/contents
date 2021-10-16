@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Record" representedClassName="Record" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="record" inverseEntity="Session"/>
     </entity>
@@ -11,7 +12,7 @@
         <relationship name="record" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Record" inverseName="session" inverseEntity="Record"/>
     </entity>
     <elements>
-        <element name="Record" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Record" positionX="-63" positionY="-18" width="128" height="89"/>
         <element name="Session" positionX="248.515625" positionY="6.34326171875" width="98.548095703125" height="88"/>
     </elements>
 </model>
