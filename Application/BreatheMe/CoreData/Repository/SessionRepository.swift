@@ -17,7 +17,7 @@ class SessionRepository {
         self.sessionDao = sessionDao
     }
 
-    func getSessions(completion: (Result<[Session], Error>) -> Void) {
+    func getSessions(limit: Int = 0, offset: Int = 0, completion: (Result<[Session], Error>) -> Void) {
         do {
             let sessions = try sessionDao.getSessions(context: database.context)
             completion(.success(sessions))
@@ -28,7 +28,7 @@ class SessionRepository {
     
     func saveSessionWith(startDate: Date, endDate: Date, completion: (Result<Void, Error>) -> Void ) {
         do {
-            sessionDao.insert(startDate: startDate, endDate: endDate)
+            sessionDao.insert(startDate: startDate, endDate: endDate, context: database.context)
             try database.saveContext()
             completion(.success(()))
         } catch {

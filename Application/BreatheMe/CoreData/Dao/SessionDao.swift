@@ -9,13 +9,7 @@ import CoreData
 
 class SessionDao {
 
-    let context: NSManagedObjectContext
-
-    init(context: NSManagedObjectContext) {
-        self.context = context
-    }
-
-    func insert(startDate: Date, endDate: Date) {
+    func insert(startDate: Date, endDate: Date, context: NSManagedObjectContext) {
         guard let session = NSEntityDescription.insertNewObject(forEntityName: Session.entityName, into: context) as? Session else {
             return
         }
@@ -24,10 +18,11 @@ class SessionDao {
         session.endDate = endDate
     }
 
-    func getSessions(context: NSManagedObjectContext) throws -> [Session] {
+    func getSessions(limit: Int = 0, offset: Int = 0, context: NSManagedObjectContext) throws -> [Session] {
         let request: NSFetchRequest<Session> = Session.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Session.startDate), ascending: false)]
-        
+        request.fetchLimit = limit
+        request.fetchOffset = offset
         return try context.fetch(request)
     }
 }

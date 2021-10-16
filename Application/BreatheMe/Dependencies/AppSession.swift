@@ -10,8 +10,12 @@ import Foundation
 class AppSession {
 
     let dataManager: DataManager
+    let sessionRepository: SessionRepository
+    let recordRepository: RecordRepository
 
-    init(dataManager: DataManager) {
+    init(dataManager: DataManager, sessionRepository: SessionRepository, recordRepository: RecordRepository) {
         self.dataManager = dataManager
+        self.sessionRepository = sessionRepository
+        self.recordRepository = recordRepository
     }
 }
