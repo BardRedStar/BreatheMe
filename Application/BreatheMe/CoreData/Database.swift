@@ -7,13 +7,14 @@
 
 import CoreData
 
+
 class Database {
 
     var context: NSManagedObjectContext {
         persistentContainer.viewContext
     }
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "BreatheMe")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -23,10 +24,14 @@ class Database {
         return container
     }()
 
-
-    func saveContext() throws {
+    func saveContext() {
         if context.hasChanges {
-            try context.save()
+            do {
+                try context.save()
+                print("context saved")
+            } catch {
+                print("error while saving context \(error.localizedDescription)")
+            }
         }
     }
 

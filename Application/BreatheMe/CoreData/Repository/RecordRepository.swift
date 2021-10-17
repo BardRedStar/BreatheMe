@@ -9,21 +9,28 @@ import Foundation
 
 class RecordRepository {
 
-    let database: Database
-    let recordDao: RecordDao
+    private let database: Database
+    private let recordDao: RecordDao
 
     init(database: Database, recordDao: RecordDao) {
         self.database = database
         self.recordDao = recordDao
     }
 
-    func saveRecordWith(type: String, startDate: Date, endDate: Date, to session: Session, completion: (Result<Void, Error>) -> Void ) {
-        do {
-            recordDao.insert(type: type, startDate: startDate, endDate: endDate, session: session, context: database.context)
-            try database.saveContext()
-            completion(.success(()))
-        } catch {
-            completion(.failure(error))
+    func createRecordWith(type: String,
+                          startDate: Date,
+                          endDate: Date?,
+                          attachTo session: Session,
+                          completion: (Result<Record, Error>) -> Void) {
+
+        guard let record = recordDao.insert(type: type,
+                                            startDate: startDate,
+                                            endDate: endDate,
+                                            session: session,
+                                            context: database.context) else {
+            completion(.failure(CoreDataError.createNewObject("Couldn't create new record")))
+            return
         }
+        completion(.success(record))
     }
 }

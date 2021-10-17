@@ -18,13 +18,18 @@ class SessionListTableHeaderView: SetuppableTableHeaderFooterView {
 
     // MARK: - UI Controls
 
-    private lazy var backgroundBlurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
+    private lazy var blurBackgroundView: UIVisualEffectView = {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+        view.alpha = 0.7
+        view.clipsToBounds = true
+        return view
+    }()
 
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 12)
+        label.font = .boldSystemFont(ofSize: 12)
         label.numberOfLines = 1
-        label.textColor = .white
+        label.textColor = .gray
         return label
     }()
 
@@ -33,26 +38,28 @@ class SessionListTableHeaderView: SetuppableTableHeaderFooterView {
     override func setup() {
         super.setup()
 
+        backgroundView?.backgroundColor = .clear
         contentView.backgroundColor = .clear
+        tintColor = .clear
 
-        contentView.addSubview(backgroundBlurView)
+        contentView.addSubview(blurBackgroundView)
         contentView.addSubview(dateLabel)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        backgroundBlurView.layer.cornerRadius = bounds.height / 2
-
         let inset = Constants.contentInset
 
         dateLabel.sizeToFit()
 
-        backgroundBlurView.frame.size = CGSize(width: inset.left + dateLabel.frame.size.width + inset.right,
+        blurBackgroundView.frame.size = CGSize(width: inset.left + dateLabel.frame.size.width + inset.right,
                                                height: inset.top + dateLabel.frame.size.height + inset.bottom)
 
         dateLabel.center = contentView.center
-        backgroundBlurView.center = contentView.center
+        blurBackgroundView.center = contentView.center
+
+        blurBackgroundView.layer.cornerRadius = blurBackgroundView.frame.size.height / 2
     }
 
     // MARK: - UI Methods

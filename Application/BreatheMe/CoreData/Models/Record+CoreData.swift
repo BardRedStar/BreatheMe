@@ -15,7 +15,7 @@ public class Record: NSManagedObject, Identifiable {}
 extension Record {
     @NSManaged public var type: String
     @NSManaged public var startDate: Date
-    @NSManaged public var endDate: Date
+    @NSManaged public var endDate: Date?
     @NSManaged public var session: Session
 
     static var entityName = "Record"

@@ -9,15 +9,17 @@ import CoreData
 
 class RecordDao {
     
-    func insert(type: String, startDate: Date, endDate: Date, session: Session, context: NSManagedObjectContext) {
+    func insert(type: String, startDate: Date, endDate: Date?, session: Session, context: NSManagedObjectContext) -> Record? {
         guard let record = NSEntityDescription.insertNewObject(forEntityName: Record.entityName, into: context) as? Record else {
-            return
+            return nil
         }
 
         record.type = type
         record.startDate = startDate
         record.endDate = endDate
         record.session = session
+
+        return record
     }
 
     func getRecordsForSession(session: Session, context: NSManagedObjectContext) throws -> [Record] {

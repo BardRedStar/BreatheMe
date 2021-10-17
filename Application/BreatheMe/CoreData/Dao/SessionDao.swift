@@ -9,13 +9,14 @@ import CoreData
 
 class SessionDao {
 
-    func insert(startDate: Date, endDate: Date, context: NSManagedObjectContext) {
+    func insert(startDate: Date, endDate: Date?, context: NSManagedObjectContext) -> Session? {
         guard let session = NSEntityDescription.insertNewObject(forEntityName: Session.entityName, into: context) as? Session else {
-            return
+            return nil
         }
 
         session.startDate = startDate
         session.endDate = endDate
+        return session
     }
 
     func getSessions(limit: Int = 0, offset: Int = 0, context: NSManagedObjectContext) throws -> [Session] {

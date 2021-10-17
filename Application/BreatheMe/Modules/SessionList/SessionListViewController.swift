@@ -10,18 +10,32 @@ import UIKit
 class SessionListViewController: UIViewController {
 
     // MARK: - UI Controls
+    private lazy var backgroundImageView: BlurredImageView = {
+        let view = BlurredImageView()
+        view.image = UIImage(named: "background")
+        view.blurAlpha = 0.75
+        return view
+    }()
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
+
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
 
         tableView.delegate = self
         tableView.dataSource = self
 
         tableView.register(SessionListCell.self, forCellReuseIdentifier: SessionListCell.Constants.reuseIdentifier)
-        tableView.register(<#T##aClass: AnyClass?##AnyClass?#>, forHeaderFooterViewReuseIdentifier: <#T##String#>)
+        tableView.register(SessionListTableHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: SessionListTableHeaderView.Constants.reuseIdentifier)
 
         return tableView
     }()
+
+    // MARK: - Output
+
+    var didSelectSession: ((Session) -> Void)?
 
     // MARK: - Properties
 
@@ -40,30 +54,66 @@ class SessionListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureNavBar()
         configureUI()
         bindViewModelActions()
+
+        viewModel.loadData()
     }
 
     // MARK: - UI Methods
 
-    private func configureUI() {
-        tableView.backgroundColor = .clear
-        view.backgroundColor = .clear
+    private func configureNavBar() {
+        let button = UIButton()
+        button.setTitle("Share", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
+        button.titleLabel?.textColor = .white
+        button.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
 
-        NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 0, constant: 0),
-            NSLayoutConstraint(item: tableView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 0, constant: 0),
-            NSLayoutConstraint(item: tableView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 0, constant: 0),
-            NSLayoutConstraint(item: tableView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0, constant: 0),
-        ])
+        navigationItem.title = "Your breathe sessions"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.tintColor = .white
+    }
+
+    private func configureUI() {
+
+        view.addSubview(backgroundImageView)
+        view.addSubview(tableView)
+
+        tableView.backgroundColor = .clear
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 
     private func bindViewModelActions() {
         viewModel.didDataUpdate = { [weak self] in
             self?.tableView.reloadData()
         }
+
+        viewModel.didError = { [weak self] error in
+            guard let self = self else { return }
+
+            AlertHelper.showErrorAlertWith(message: error.localizedDescription, target: self)
+        }
     }
 
+    // MARK: - UI Callbacks
+
+    @objc private func shareAction() {
+        print("share")
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -82,14 +132,33 @@ extension SessionListViewController: UITableViewDataSource, UITableViewDelegate 
         50.0
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70.0
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SessionListCell.Constants.reuseIdentifier, for: indexPath) as! SessionListCell
-        cell.configureWith(model: viewModel.sessionViewModelAt(position: indexPath.row))
+        if let model = viewModel.sessionViewModelFor(section: indexPath.section, position: indexPath.row) {
+            cell.configureWith(model: model)
+        }
         return cell
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SessionListTableHeaderView.Constants.reuseIdentifier) as! SessionListTableHeaderView
         view.configureWith(date: viewModel.dateForSection(section))
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let session = viewModel.sessionFor(section: indexPath.section, position: indexPath.row) {
+            didSelectSession?(session)
+        }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if viewModel.isReadyForLoading, scrollView.contentSize.height - scrollView.contentOffset.y - scrollView.frame.height < 300.0  {
+            viewModel.loadData()
+        }
     }
 }

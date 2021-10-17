@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setNavbarTransparent()
 
-        let dataManager = DataManager()
         let database = Database()
+        let dataManager = DataManager(database: database)
         let sessionDao = SessionDao()
         let recordDao = RecordDao()
         let sessionRepository = SessionRepository(database: database, sessionDao: sessionDao)
