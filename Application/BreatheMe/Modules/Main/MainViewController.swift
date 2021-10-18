@@ -11,7 +11,12 @@ class MainViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet private weak var breatheButton: MainBreatheButton!
+    @IBOutlet private var backgroundImageView: BlurredImageView!
+    @IBOutlet private var breatheButton: MainBreatheButton!
+
+    // MARK: - Output
+
+    var didTapSessions: (() -> Void)?
 
     // MARK: - Properties
 
@@ -33,7 +38,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Main"
+        navigationItem.title = ""
+
+        backgroundImageView.image = UIImage(named: "background")
+        backgroundImageView.blurAlpha = 0.75
 
         configureRecorder()
         configureProcessor()
@@ -42,7 +50,6 @@ class MainViewController: UIViewController {
     // MARK: - UI Methods
 
     private func configureRecorder() {
-
         recorder.isFakeMode = true
 
         recorder.didRecordVolumeValue = { [weak self] value in
@@ -54,19 +61,25 @@ class MainViewController: UIViewController {
         processor.didChangeStage = { [weak self] stage in
             guard let self = self else { return }
 
-            self.viewModel.saveBreatheStage(stage)
+            self.viewModel.processBreatheStage(stage)
         }
     }
 
     // MARK: - UI Callbacks
 
+    @IBAction private func sessionsAction(_ sender: Any) {
+        didTapSessions?()
+    }
+
     @IBAction private func breatheAction(_ sender: Any) {
         if viewModel.isBreathing {
             print("Stop breathing")
             recorder.stopRecording()
+            viewModel.endCurrentSession()
         } else {
             print("Breathe")
             recorder.startRecording()
+            viewModel.startNewSession()
         }
         viewModel.isBreathing.toggle()
     }

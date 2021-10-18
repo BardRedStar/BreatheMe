@@ -12,7 +12,7 @@ class BreatheRecorder {
 
     // MARK: - Output
 
-    var didRecordVolumeValue: ((Double) -> Void)? = nil
+    var didRecordVolumeValue: ((Float) -> Void)? = nil
 
     // MARK: - Properties
 
@@ -100,7 +100,9 @@ class BreatheRecorder {
         }.reduce(0, +) / Float(buffer.frameLength))
 
         let volumeDB = 20 * log10(rms)
-        print("Frame volume level: \(self.scaledPower(volumeDB))")
+        let volumeScaledValue = self.scaledPower(volumeDB)
+        print("Frame volume level: \(volumeScaledValue)")
+        didRecordVolumeValue?(volumeScaledValue)
     }
 
     // MARK: - Utils
@@ -177,7 +179,7 @@ extension BreatheRecorder {
     func generateFakeValues() {
         fakeValuesTimer?.invalidate()
         fakeValuesTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
-            let value: Double
+            let value: Float
             switch Self.fakeValuesCount {
             case 0..<25: value = 20
             case 25..<46: value = 0

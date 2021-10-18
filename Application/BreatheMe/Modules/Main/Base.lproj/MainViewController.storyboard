@@ -16,27 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="XJA-9r-lSw">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57u-94-f34" customClass="BlurredImageView" customModule="BreatheMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acR-fw-1V0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="35E-fi-awQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfT-Gx-wcL" customClass="MainBreatheButton" customModule="BreatheMe" customModuleProvider="target">
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5e-XO-eaA">
+                                <rect key="frame" x="282" y="94" width="72" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Sessions">
+                                    <color key="titleColor" red="0.1960784314" green="0.2666666667" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sessionsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0V-2t-B0X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfT-Gx-wcL" customClass="MainBreatheButton" customModule="BreatheMe" customModuleProvider="target">
                                 <rect key="frame" x="107" y="353" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="MWD-ec-dNS"/>
                                     <constraint firstAttribute="height" constant="200" id="iv9-FX-5c2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Breathe Me"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Breathe Me">
+                                    <color key="titleColor" red="0.1960784314" green="0.2666666667" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="breatheAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OL0-Uw-Qxn"/>
                                 </connections>
@@ -47,9 +51,12 @@
                         <constraints>
                             <constraint firstItem="OfT-Gx-wcL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0fq-kh-MT0"/>
                             <constraint firstItem="OfT-Gx-wcL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I3y-Lh-xZF"/>
+                            <constraint firstItem="b5e-XO-eaA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Rsn-GX-3fR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b5e-XO-eaA" secondAttribute="trailing" constant="60" id="gxx-Dk-Nzt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="57u-94-f34" id="uIR-47-wrV"/>
                         <outlet property="breatheButton" destination="OfT-Gx-wcL" id="bIr-dv-PHG"/>
                     </connections>
                 </viewController>
@@ -59,7 +66,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="564" height="1002"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

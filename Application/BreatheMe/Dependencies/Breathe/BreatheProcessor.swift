@@ -28,11 +28,11 @@ class BreatheProcessor: NSObject {
         newSupposedStage = .delay
     }
 
-    func processNewVolumeValue(_ value: Double) {
+    func processNewVolumeValue(_ value: Float) {
         let stage: BreatheStage
         switch value {
-        case 10..<50: stage = .inhale
-        case 50...: stage = .exhale
+        case 10..<35: stage = .inhale
+        case 35...: stage = .exhale
         default: stage = .delay
         }
 

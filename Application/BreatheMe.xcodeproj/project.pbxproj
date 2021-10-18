@@ -14,8 +14,14 @@
 		56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */; };
 		56484902270DE88900F4F04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56484901270DE88900F4F04E /* Assets.xcassets */; };
 		56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56484903270DE88900F4F04E /* LaunchScreen.storyboard */; };
+		56701C86271C101B004A0421 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C85271C101B004A0421 /* DateHelper.swift */; };
+		56701C89271C1935004A0421 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C88271C1935004A0421 /* AlertHelper.swift */; };
+		56701C8C271C1B2C004A0421 /* BlurredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C8B271C1B2C004A0421 /* BlurredImageView.swift */; };
+		56701C8F271C3B4B004A0421 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C8E271C3B4B004A0421 /* Errors.swift */; };
 		567FD619271AC1CE00D508A2 /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FD618271AC1CE00D508A2 /* SessionRepository.swift */; };
 		567FD61C271AC1D600D508A2 /* RecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FD61B271AC1D600D508A2 /* RecordRepository.swift */; };
+		567FD621271AC93A00D508A2 /* SessionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FD620271AC93A00D508A2 /* SessionListCell.swift */; };
+		567FD62E271B29AA00D508A2 /* SessionListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FD62D271B29AA00D508A2 /* SessionListTableHeaderView.swift */; };
 		5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5696FFF727148624001E6A27 /* BreatheProcessor.swift */; };
 		56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0BEF927173995007BA6B4 /* BreatheStage.swift */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
@@ -46,8 +52,14 @@
 		56484901270DE88900F4F04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56484904270DE88900F4F04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56484906270DE88900F4F04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56701C85271C101B004A0421 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		56701C88271C1935004A0421 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		56701C8B271C1B2C004A0421 /* BlurredImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredImageView.swift; sourceTree = "<group>"; };
+		56701C8E271C3B4B004A0421 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		567FD618271AC1CE00D508A2 /* SessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepository.swift; sourceTree = "<group>"; };
 		567FD61B271AC1D600D508A2 /* RecordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRepository.swift; sourceTree = "<group>"; };
+		567FD620271AC93A00D508A2 /* SessionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListCell.swift; sourceTree = "<group>"; };
+		567FD62D271B29AA00D508A2 /* SessionListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListTableHeaderView.swift; sourceTree = "<group>"; };
 		5696FFF727148624001E6A27 /* BreatheProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheProcessor.swift; sourceTree = "<group>"; };
 		56B0BEF927173995007BA6B4 /* BreatheStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheStage.swift; sourceTree = "<group>"; };
 		56D54035270DEBD600EC0C84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -133,6 +145,8 @@
 		5648490F270DEA0A00F4F04E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				56701C85271C101B004A0421 /* DateHelper.swift */,
+				56701C88271C1935004A0421 /* AlertHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -140,9 +154,9 @@
 		56484910270DEA0E00F4F04E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				56B0BEF727173988007BA6B4 /* Common */,
 				56E27EA527188265003E682A /* RecordList */,
 				56E27E9E2718823F003E682A /* SessionList */,
-				56B0BEF727173988007BA6B4 /* Common */,
 				56D54039270DEC3500EC0C84 /* Main */,
 				564848F5270DE88800F4F04E /* AppDelegate.swift */,
 				56484903270DE88900F4F04E /* LaunchScreen.storyboard */,
@@ -158,6 +172,7 @@
 				56D5403F270DED8600EC0C84 /* Models */,
 				564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */,
 				56E27E9427187D17003E682A /* Database.swift */,
+				56701C8E271C3B4B004A0421 /* Errors.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -252,6 +267,7 @@
 		56D54040270DED8F00EC0C84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56701C8B271C1B2C004A0421 /* BlurredImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +320,8 @@
 			children = (
 				56E27E9F27188256003E682A /* SessionListViewController.swift */,
 				56E27EA22718825F003E682A /* SessionListControllerViewModel.swift */,
+				567FD620271AC93A00D508A2 /* SessionListCell.swift */,
+				567FD62D271B29AA00D508A2 /* SessionListTableHeaderView.swift */,
 			);
 			path = SessionList;
 			sourceTree = "<group>";
@@ -392,11 +410,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56701C89271C1935004A0421 /* AlertHelper.swift in Sources */,
+				56701C86271C101B004A0421 /* DateHelper.swift in Sources */,
 				56E27E99271881D0003E682A /* SessionDao.swift in Sources */,
 				56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */,
 				56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */,
 				56E27EA32718825F003E682A /* SessionListControllerViewModel.swift in Sources */,
+				567FD621271AC93A00D508A2 /* SessionListCell.swift in Sources */,
 				56D54051270DF01B00EC0C84 /* MainControllerViewModel.swift in Sources */,
+				567FD62E271B29AA00D508A2 /* SessionListTableHeaderView.swift in Sources */,
 				5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */,
 				5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */,
 				567FD619271AC1CE00D508A2 /* SessionRepository.swift in Sources */,
@@ -408,8 +430,10 @@
 				56E27E9C271881DB003E682A /* RecordDao.swift in Sources */,
 				56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */,
 				564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */,
+				56701C8F271C3B4B004A0421 /* Errors.swift in Sources */,
 				56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */,
 				56D54059270DF52400EC0C84 /* MainBreatheButton.swift in Sources */,
+				56701C8C271C1B2C004A0421 /* BlurredImageView.swift in Sources */,
 				56E27E8927187B93003E682A /* Session+CoreData.swift in Sources */,
 				56E27EA027188256003E682A /* SessionListViewController.swift in Sources */,
 				56E27E9527187D17003E682A /* Database.swift in Sources */,
