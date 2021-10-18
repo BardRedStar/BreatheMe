@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class AppRouter {
 
@@ -37,7 +38,7 @@ class AppRouter {
     }
 
     private func runSessionsList() {
-        let viewModel = SessionListControllerViewModel(session: session)
+        let viewModel = SessionListControllerViewModel(appSession: session)
         let controller = SessionListViewController.instantiate(viewModel: viewModel)
 
         controller.didSelectSession = { [weak self] session in
@@ -48,13 +49,20 @@ class AppRouter {
     }
 
     private func runRecordsListWith(session: Session) {
-        
+        let viewModel = RecordListControllerViewModel(appSession: self.session, session: session)
+        let controller = RecordListViewController.instantiate(viewModel: viewModel)
+
+        push(controller)
     }
 
     // MARK: - Helpers
 
     private func push(_ controller: UIViewController) {
         navigationController?.pushViewController(controller, animated: true)
+    }
+
+    private func present(_ controller: UIViewController) {
+        navigationController?.present(controller, animated: true, completion: nil)
     }
 
     private func setRootController(_ controller: UIViewController) {

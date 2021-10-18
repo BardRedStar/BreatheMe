@@ -14,7 +14,7 @@
 		56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 564848FE270DE88800F4F04E /* BreatheMe.xcdatamodeld */; };
 		56484902270DE88900F4F04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56484901270DE88900F4F04E /* Assets.xcassets */; };
 		56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56484903270DE88900F4F04E /* LaunchScreen.storyboard */; };
-		56701C86271C101B004A0421 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C85271C101B004A0421 /* DateHelper.swift */; };
+		56701C86271C101B004A0421 /* DateTimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C85271C101B004A0421 /* DateTimeHelper.swift */; };
 		56701C89271C1935004A0421 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C88271C1935004A0421 /* AlertHelper.swift */; };
 		56701C8C271C1B2C004A0421 /* BlurredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C8B271C1B2C004A0421 /* BlurredImageView.swift */; };
 		56701C8F271C3B4B004A0421 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56701C8E271C3B4B004A0421 /* Errors.swift */; };
@@ -33,6 +33,11 @@
 		56D54059270DF52400EC0C84 /* MainBreatheButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D54058270DF52400EC0C84 /* MainBreatheButton.swift */; };
 		56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5405C270DF64E00EC0C84 /* String+Extensions.swift */; };
 		56D54069270DF97700EC0C84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D5406B270DF97700EC0C84 /* Localizable.strings */; };
+		56D74ACE271DC73700587E08 /* RecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74ACD271DC73700587E08 /* RecordListViewController.swift */; };
+		56D74AD0271DC74100587E08 /* RecordListControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74ACF271DC74100587E08 /* RecordListControllerViewModel.swift */; };
+		56D74AD2271DC86C00587E08 /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74AD1271DC86C00587E08 /* RecordListCell.swift */; };
+		56D74AD4271DE26600587E08 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74AD3271DE26600587E08 /* GlobalConstants.swift */; };
+		56D74AD6271DE55200587E08 /* MailComposerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74AD5271DE55200587E08 /* MailComposerPresenter.swift */; };
 		56E27E8927187B93003E682A /* Session+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E8527187B93003E682A /* Session+CoreData.swift */; };
 		56E27E8B27187B93003E682A /* Record+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E8727187B93003E682A /* Record+CoreData.swift */; };
 		56E27E9527187D17003E682A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27E9427187D17003E682A /* Database.swift */; };
@@ -52,7 +57,7 @@
 		56484901270DE88900F4F04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56484904270DE88900F4F04E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56484906270DE88900F4F04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56701C85271C101B004A0421 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		56701C85271C101B004A0421 /* DateTimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHelper.swift; sourceTree = "<group>"; };
 		56701C88271C1935004A0421 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		56701C8B271C1B2C004A0421 /* BlurredImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredImageView.swift; sourceTree = "<group>"; };
 		56701C8E271C3B4B004A0421 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
@@ -72,6 +77,11 @@
 		56D5405C270DF64E00EC0C84 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		56D5406A270DF97700EC0C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56D5406D270DF99200EC0C84 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		56D74ACD271DC73700587E08 /* RecordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListViewController.swift; sourceTree = "<group>"; };
+		56D74ACF271DC74100587E08 /* RecordListControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListControllerViewModel.swift; sourceTree = "<group>"; };
+		56D74AD1271DC86C00587E08 /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
+		56D74AD3271DE26600587E08 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		56D74AD5271DE55200587E08 /* MailComposerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposerPresenter.swift; sourceTree = "<group>"; };
 		56E27E8527187B93003E682A /* Session+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreData.swift"; sourceTree = "<group>"; };
 		56E27E8727187B93003E682A /* Record+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreData.swift"; sourceTree = "<group>"; };
 		56E27E9427187D17003E682A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -145,8 +155,10 @@
 		5648490F270DEA0A00F4F04E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				56701C85271C101B004A0421 /* DateHelper.swift */,
+				56701C85271C101B004A0421 /* DateTimeHelper.swift */,
 				56701C88271C1935004A0421 /* AlertHelper.swift */,
+				56D74AD3271DE26600587E08 /* GlobalConstants.swift */,
+				56D74AD5271DE55200587E08 /* MailComposerPresenter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -329,6 +341,9 @@
 		56E27EA527188265003E682A /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
+				56D74ACD271DC73700587E08 /* RecordListViewController.swift */,
+				56D74ACF271DC74100587E08 /* RecordListControllerViewModel.swift */,
+				56D74AD1271DC86C00587E08 /* RecordListCell.swift */,
 			);
 			path = RecordList;
 			sourceTree = "<group>";
@@ -410,8 +425,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D74ACE271DC73700587E08 /* RecordListViewController.swift in Sources */,
 				56701C89271C1935004A0421 /* AlertHelper.swift in Sources */,
-				56701C86271C101B004A0421 /* DateHelper.swift in Sources */,
+				56701C86271C101B004A0421 /* DateTimeHelper.swift in Sources */,
 				56E27E99271881D0003E682A /* SessionDao.swift in Sources */,
 				56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */,
 				56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */,
@@ -420,6 +436,7 @@
 				56D54051270DF01B00EC0C84 /* MainControllerViewModel.swift in Sources */,
 				567FD62E271B29AA00D508A2 /* SessionListTableHeaderView.swift in Sources */,
 				5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */,
+				56D74AD0271DC74100587E08 /* RecordListControllerViewModel.swift in Sources */,
 				5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */,
 				567FD619271AC1CE00D508A2 /* SessionRepository.swift in Sources */,
 				56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */,
@@ -428,6 +445,7 @@
 				564848FA270DE88800F4F04E /* MainViewController.swift in Sources */,
 				567FD61C271AC1D600D508A2 /* RecordRepository.swift in Sources */,
 				56E27E9C271881DB003E682A /* RecordDao.swift in Sources */,
+				56D74AD2271DC86C00587E08 /* RecordListCell.swift in Sources */,
 				56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */,
 				564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */,
 				56701C8F271C3B4B004A0421 /* Errors.swift in Sources */,
@@ -436,7 +454,9 @@
 				56701C8C271C1B2C004A0421 /* BlurredImageView.swift in Sources */,
 				56E27E8927187B93003E682A /* Session+CoreData.swift in Sources */,
 				56E27EA027188256003E682A /* SessionListViewController.swift in Sources */,
+				56D74AD6271DE55200587E08 /* MailComposerPresenter.swift in Sources */,
 				56E27E9527187D17003E682A /* Database.swift in Sources */,
+				56D74AD4271DE26600587E08 /* GlobalConstants.swift in Sources */,
 				56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

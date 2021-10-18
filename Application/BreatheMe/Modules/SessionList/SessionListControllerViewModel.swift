@@ -21,7 +21,7 @@ class SessionListControllerViewModel {
 
     // MARK: - Properties
 
-    let session: AppSession
+    let appSession: AppSession
 
     private var breatheSessions: [String: [Session]] = [:]
     private var sectionDates: [String] = []
@@ -36,8 +36,8 @@ class SessionListControllerViewModel {
 
     // MARK: - Initialization
 
-    init(session: AppSession) {
-        self.session = session
+    init(appSession: AppSession) {
+        self.appSession = appSession
     }
 
     // MARK: - Data Methods
@@ -50,7 +50,7 @@ class SessionListControllerViewModel {
         isReadyForLoading = false
 
         let limit = Constants.sessionsPerPage
-        session.sessionRepository.getSessions(limit: limit, offset: page * limit) { [weak self] result in
+        appSession.sessionRepository.getSessions(limit: limit, offset: page * limit) { [weak self] result in
             guard let self = self else { return }
 
             self.isReadyForLoading = true
@@ -83,8 +83,8 @@ class SessionListControllerViewModel {
         let exhales = records.reduce(0, { $0 + ($1.type == BreatheStage.exhale.rawValue ? 1 : 0)})
         return SessionListCell.ViewModel(inhales: inhales,
                                          exhales: exhales,
-                                         startDate: DateHelper.formattedTimeFromDate(session.startDate),
-                                         endDate: session.endDate.flatMap { DateHelper.formattedTimeFromDate($0) } ?? "...")
+                                         startDate: DateTimeHelper.formattedTimeFromDate(session.startDate),
+                                         endDate: session.endDate.flatMap { DateTimeHelper.formattedTimeFromDate($0) } ?? "...")
     }
 
     func dateForSection(_ section: Int) -> String {
@@ -101,7 +101,7 @@ class SessionListControllerViewModel {
 
     private func appendSessions(_ sessions: [Session]) {
         sessions.forEach {
-            let date = DateHelper.formattedDayFromDate($0.startDate)
+            let date = DateTimeHelper.formattedDayFromDate($0.startDate)
             if !sectionDates.contains(date) {
                 sectionDates.append(date)
             }
