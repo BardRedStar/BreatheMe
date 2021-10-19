@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5606B780270F4D5300EA177A /* BreatheRecorder.swift */; };
+		56357127271EFDDF00D61325 /* FileIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56357126271EFDDF00D61325 /* FileIOManager.swift */; };
 		564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F5270DE88800F4F04E /* AppDelegate.swift */; };
 		564848FA270DE88800F4F04E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564848F9270DE88800F4F04E /* MainViewController.swift */; };
 		564848FD270DE88800F4F04E /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564848FB270DE88800F4F04E /* MainViewController.storyboard */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		5606B780270F4D5300EA177A /* BreatheRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheRecorder.swift; sourceTree = "<group>"; };
+		56357126271EFDDF00D61325 /* FileIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileIOManager.swift; sourceTree = "<group>"; };
 		564848F2270DE88800F4F04E /* BreatheMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreatheMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564848F5270DE88800F4F04E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564848F9270DE88800F4F04E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				56D5404D270DEFDE00EC0C84 /* DataManager.swift */,
+				56357126271EFDDF00D61325 /* FileIOManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */,
 				56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */,
 				56E27E8B27187B93003E682A /* Record+CoreData.swift in Sources */,
+				56357127271EFDDF00D61325 /* FileIOManager.swift in Sources */,
 				564848FA270DE88800F4F04E /* MainViewController.swift in Sources */,
 				567FD61C271AC1D600D508A2 /* RecordRepository.swift in Sources */,
 				56E27E9C271881DB003E682A /* RecordDao.swift in Sources */,

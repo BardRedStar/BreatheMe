@@ -8,10 +8,17 @@
 import UIKit
 import MessageUI
 
-class MailComposerPresenter {
+/// A presenter class, which is responsible for opening mail composer controller
+class MailComposerPresenter: NSObject {
 
+    /// Checks whether device can send emails (open composer) or not
+    var canSendEmail: Bool {
+        MFMailComposeViewController.canSendMail()
+    }
+
+    /// Opens composer controller with `attachFile` attachment. Presents modally on `presentationController`
     func present(on presentationController: UIViewController, attachFile file: URL) {
-        if !MFMailComposeViewController.canSendMail() {
+        if !canSendEmail {
             return
         }
 
@@ -19,7 +26,20 @@ class MailComposerPresenter {
 
         let controller = MFMailComposeViewController()
         controller.setToRecipients([GlobalConstants.coachEmailAddress])
-        controller.addAttachmentData(data ?? Data(), mimeType: "text/plain", fileName: "yoga_training.txt")
+        controller.mailComposeDelegate = self
+
+        if let data = data {
+            controller.addAttachmentData(data, mimeType: "text/plain", fileName: "yoga_training.txt")
+        }
+
         presentationController.present(controller, animated: true, completion: nil)
+    }
+}
+
+// MARK: - MFMailComposeViewControllerDelegate
+
+extension MailComposerPresenter: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
