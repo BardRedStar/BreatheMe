@@ -8,18 +8,24 @@
 import UIKit
 import MessageUI
 
+/// A main router class, which is responsible for navigation
 class AppRouter {
 
-    let session: AppSession
+    // MARK: - Properties
+
+    let appSession: AppSession
 
     private var navigationController: UINavigationController?
     private weak var window: UIWindow?
 
+    // MARK: - Initializaion
+
     init(window: UIWindow, session: AppSession) {
-        self.session = session
+        self.appSession = session
         self.window = window
     }
 
+    /// Start point of the routing
     func start() {
         runMain()
     }
@@ -27,7 +33,7 @@ class AppRouter {
     // MARK: - Routing
 
     private func runMain() {
-        let viewModel = MainControllerViewModel(session: session)
+        let viewModel = MainControllerViewModel(session: appSession)
         let controller = MainViewController.instantiate(viewModel: viewModel)
 
         controller.didTapSessions = { [weak self] in
@@ -38,7 +44,7 @@ class AppRouter {
     }
 
     private func runSessionsList() {
-        let viewModel = SessionListControllerViewModel(appSession: session)
+        let viewModel = SessionListControllerViewModel(appSession: appSession)
         let controller = SessionListViewController.instantiate(viewModel: viewModel)
 
         controller.didSelectSession = { [weak self] session in
@@ -49,7 +55,7 @@ class AppRouter {
     }
 
     private func runRecordsListWith(session: Session) {
-        let viewModel = RecordListControllerViewModel(appSession: self.session, session: session)
+        let viewModel = RecordListControllerViewModel(appSession: self.appSession, session: session)
         let controller = RecordListViewController.instantiate(viewModel: viewModel)
 
         push(controller)
@@ -57,14 +63,17 @@ class AppRouter {
 
     // MARK: - Helpers
 
+    /// Pushes controller onto navigation stack
     private func push(_ controller: UIViewController) {
         navigationController?.pushViewController(controller, animated: true)
     }
 
+    /// Presents controller modally
     private func present(_ controller: UIViewController) {
         navigationController?.present(controller, animated: true, completion: nil)
     }
 
+    /// Sets controller as root
     private func setRootController(_ controller: UIViewController) {
         navigationController = UINavigationController(rootViewController: controller)
         window?.rootViewController = navigationController

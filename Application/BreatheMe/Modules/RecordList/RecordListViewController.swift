@@ -7,9 +7,11 @@
 
 import UIKit
 
+/// A controller view record list screen
 class RecordListViewController: UIViewController {
 
     // MARK: - UI Controls
+
     private lazy var backgroundImageView: BlurredImageView = {
         let view = BlurredImageView()
         view.image = UIImage(named: "background")
@@ -57,12 +59,14 @@ class RecordListViewController: UIViewController {
 
     // MARK: - UI Methods
 
+    /// Sets up navigation bar
     private func configureNavBar() {
         navigationItem.title = "Detailed Statistics"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.tintColor = .white
     }
 
+    /// Sets up general constraints and hierarchy
     private func configureUI() {
 
         view.addSubview(backgroundImageView)
@@ -84,6 +88,7 @@ class RecordListViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 
+    /// Binds view models's callbacks
     private func bindViewModelActions() {
         viewModel.didDataUpdate = { [weak self] in
             self?.tableView.reloadData()

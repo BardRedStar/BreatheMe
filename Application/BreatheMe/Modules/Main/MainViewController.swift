@@ -7,10 +7,14 @@
 
 import UIKit
 
+/// A controller for main screen
 class MainViewController: UIViewController {
+
     // MARK: - Definitions
 
+    /// Constants
     enum Constants {
+        /// A storyboard name which the current controller belongs to
         static let storyboardName = "MainViewController"
     }
 
@@ -54,14 +58,14 @@ class MainViewController: UIViewController {
 
     // MARK: - UI Methods
 
+    /// Sets up the breathe recorder
     private func configureRecorder() {
-        recorder.isFakeMode = false
-
         recorder.didRecordVolumeValue = { [weak self] value in
             self?.processor.processNewVolumeValue(value)
         }
     }
 
+    /// Sets up the breathe processor
     private func configureProcessor() {
         processor.didChangeStage = { [weak self] stage in
             guard let self = self else { return }
@@ -72,6 +76,7 @@ class MainViewController: UIViewController {
 
     // MARK: - UI Callbacks
 
+    /// Sessions button action
     @IBAction private func sessionsAction(_ sender: Any) {
         if viewModel.isBreathing {
             recorder.stopRecording()
@@ -81,6 +86,7 @@ class MainViewController: UIViewController {
         didTapSessions?()
     }
 
+    /// Breathe button action
     @IBAction private func breatheAction(_ sender: Any) {
         if viewModel.isBreathing {
             recorder.stopRecording()

@@ -7,9 +7,11 @@
 
 import UIKit
 
+/// A controller class for session list screen
 class SessionListViewController: UIViewController {
 
     // MARK: - UI Controls
+
     private lazy var backgroundImageView: BlurredImageView = {
         let view = BlurredImageView()
         view.image = UIImage(named: "background")
@@ -64,6 +66,7 @@ class SessionListViewController: UIViewController {
 
     // MARK: - UI Methods
 
+    /// Sets up navigation bar
     private func configureNavBar() {
         let button = UIButton()
         button.setTitle("Share", for: .normal)
@@ -77,6 +80,7 @@ class SessionListViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
     }
 
+    /// Sets up general constraints and hierarchy
     private func configureUI() {
 
         view.addSubview(backgroundImageView)
@@ -98,6 +102,7 @@ class SessionListViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 
+    /// Binds view model's callbacks
     private func bindViewModelActions() {
         viewModel.didUpdateData = { [weak self] in
             self?.tableView.reloadData()
@@ -117,6 +122,7 @@ class SessionListViewController: UIViewController {
 
     // MARK: - UI Callbacks
 
+    /// Share button tap handler
     @objc private func shareAction() {
         if !mailComposerPresenter.canSendEmail {
             AlertHelper.showErrorAlertWith(message: "Sorry, your device doesn't support email sending", target: self)

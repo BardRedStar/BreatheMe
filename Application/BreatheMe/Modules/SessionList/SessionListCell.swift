@@ -7,9 +7,11 @@
 
 import UIKit
 
+/// A cell class for session list screen
 class SessionListCell: SetuppableTableViewCell {
     // MARK: - Definitions
 
+    /// Data displaying on UI
     struct ViewModel {
         let inhales: Int
         let exhales: Int
@@ -17,16 +19,20 @@ class SessionListCell: SetuppableTableViewCell {
         let endDate: String
     }
 
+    /// Constants
     enum Constants {
+        /// Reuse identifier for current cell class
         static let reuseIdentifier = "SessionListCell"
 
+        /// Inser for content inside a card
         static let contentInset = UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 30)
+        /// Inser for a card relative to cell bounds
         static let cardInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        /// Inset between labels
         static let innerInset: CGFloat = 10
     }
 
     // MARK: - UI Controls
-
 
     private lazy var blurBackgroundView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
@@ -106,6 +112,7 @@ class SessionListCell: SetuppableTableViewCell {
 
     // MARK: - UI Methods
 
+    /// Sets up cell with UI `model`
     func configureWith(model: ViewModel) {
         durationLabel.text = "\(model.startDate) - \(model.endDate)"
         inhalesCountLabel.text = "Inhales: \(model.inhales)"

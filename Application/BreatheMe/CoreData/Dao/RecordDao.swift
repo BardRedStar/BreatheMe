@@ -7,8 +7,10 @@
 
 import CoreData
 
+/// A data access object class for manipulating records in CoreData
 class RecordDao {
-    
+
+    /// Inserts the new record object with `type` string, `startDate` and `endDate`, and attaches it to `session`
     func insert(type: String, startDate: Date, endDate: Date?, session: Session, context: NSManagedObjectContext) -> Record? {
         guard let record = NSEntityDescription.insertNewObject(forEntityName: Record.entityName, into: context) as? Record else {
             return nil
@@ -21,13 +23,4 @@ class RecordDao {
 
         return record
     }
-
-    func getRecordsForSession(session: Session, context: NSManagedObjectContext) throws -> [Record] {
-        let request: NSFetchRequest<Record> = Record.fetchRequest()
-        request.predicate = NSPredicate(format: "%K == %@", #keyPath(Record.session), session)
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Record.startDate), ascending: false)]
-
-        return try context.fetch(request)
-    }
-
 }

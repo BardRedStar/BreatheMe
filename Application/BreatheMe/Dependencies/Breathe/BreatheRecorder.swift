@@ -8,6 +8,7 @@
 import AVFoundation
 import UIKit
 
+/// A class which is responsible for recording sounds from microphone and detecting volume level
 class BreatheRecorder {
 
     // MARK: - Output
@@ -21,9 +22,6 @@ class BreatheRecorder {
     private weak var parentController: UIViewController?
     private var isPermissionGranted: Bool = false
 
-    var isFakeMode: Bool = false
-    private var fakeValuesTimer: Timer? = nil
-
     // MARK: - Initialization
 
     init(parentController: UIViewController) {
@@ -31,12 +29,9 @@ class BreatheRecorder {
     }
 
     // MARK: - Recording methods
-    func startRecording() {
 
-        if isFakeMode {
-            generateFakeValues()
-            return
-        }
+    /// Checks the microphone permission and starts listening for microphone
+    func startRecording() {
 
         requestPermissionIfNeeded()
 
@@ -45,19 +40,15 @@ class BreatheRecorder {
         }
     }
 
+    /// Stops listening for microphone
     func stopRecording() {
-
-        if isFakeMode {
-            stopFakeValuesGeneration()
-            return
-        }
-
         if engine.isRunning {
             engine.mainMixerNode.removeTap(onBus: 0)
             engine.stop()
         }
     }
 
+    /// Sets up the audio engine and starts audio flow from microphone
     private func record() {
         let eqNode = equalizerNode()
         engine.attach(eqNode)
@@ -74,6 +65,8 @@ class BreatheRecorder {
         try! engine.start()
     }
 
+    /// Creates the equalizer node with high bass level and low mid and high frequencies
+    /// It needs to highlight the breath bass, which happens when you breathe directly into microphone
     private func equalizerNode() -> AVAudioUnitEQ {
         let options: [(Float, Float)] = [(32, -90), (62, -80), (100, -70), (150, -60), // Low frequences
                                          (350, 24), (750, 24), (1000, 24), (2000, 24), (4000, 24), (8000, 24), (16000, 24)] // High frequences
@@ -87,6 +80,7 @@ class BreatheRecorder {
 
     // MARK: - Callbacks
 
+    /// Process audio frame. Gets scaled volume level (from 0 to 100)
     private func processAudioFrame(buffer: AVAudioPCMBuffer) {
         guard let channelData = buffer.floatChannelData else {
             return
@@ -101,12 +95,13 @@ class BreatheRecorder {
 
         let volumeDB = 20 * log10(rms)
         let volumeScaledValue = self.scaledPower(volumeDB)
-        print("Frame volume level: \(volumeScaledValue)")
+
         didRecordVolumeValue?(volumeScaledValue)
     }
 
     // MARK: - Utils
 
+    /// Scales volume power and cuts the low constant noise off
     private func scaledPower(_ power: Float) -> Float {
         guard power.isFinite else {
           return 0.0
@@ -125,6 +120,7 @@ class BreatheRecorder {
 
     // MARK: - Permission
 
+    /// Requests microphone permissions
     private func requestPermissionIfNeeded() {
 
         if isPermissionGranted {
@@ -152,6 +148,7 @@ class BreatheRecorder {
         }
     }
 
+    /// Shows the permission denied alert dialog
     private func showPermissionDeniedAlert() {
         guard let parent = parentController else { return }
 
@@ -167,32 +164,5 @@ class BreatheRecorder {
         })
 
         parent.present(controller, animated: true, completion: nil)
-    }
-}
-
-// MARK: - Fake mode
-
-extension BreatheRecorder {
-
-    private static var fakeValuesCount: Int = 0
-
-    func generateFakeValues() {
-        fakeValuesTimer?.invalidate()
-        fakeValuesTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
-            let value: Float
-            switch Self.fakeValuesCount {
-            case 0..<25: value = 20
-            case 25..<46: value = 0
-            case 46..<60: value = 80
-            case 60..<80: value = 0
-            default: value = 0
-            }
-            self?.didRecordVolumeValue?(value)
-            Self.fakeValuesCount = (Self.fakeValuesCount + 1) % 80
-        }
-    }
-
-    func stopFakeValuesGeneration() {
-        fakeValuesTimer?.invalidate()
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A view model for main screen
 class MainControllerViewModel {
 
     // MARK: - Output
@@ -30,6 +31,7 @@ class MainControllerViewModel {
 
     // MARK: - Data methods
 
+    /// Starts the new session
     func startNewSession() {
         appSession.sessionRepository.createSessionWith(startDate: Date(), endDate: nil) { [weak self] result in
             switch result {
@@ -42,6 +44,7 @@ class MainControllerViewModel {
         }
     }
 
+    /// Ends current session
     func endCurrentSession() {
         currentSession?.endDate = Date()
         currentRecord?.endDate = Date()
@@ -49,6 +52,7 @@ class MainControllerViewModel {
         appSession.dataManager.commitStorageChanges()
     }
 
+    /// Processes new breathe stage. Finishes old if it exists.
     func processBreatheStage(_ stage: BreatheStage) {
         guard let session = currentSession else { return }
         currentRecord?.endDate = Date()
@@ -62,6 +66,5 @@ class MainControllerViewModel {
                 self?.didError?(error)
             }
         }
-        print(stage)
     }
 }

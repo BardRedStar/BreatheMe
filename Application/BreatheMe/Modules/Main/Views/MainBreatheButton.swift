@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// A button for breathe action on main screen
 class MainBreatheButton: SetuppableButton {
 
     // MARK: - UI Lifecycle
