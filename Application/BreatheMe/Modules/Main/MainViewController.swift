@@ -8,6 +8,11 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    // MARK: - Definitions
+
+    enum Constants {
+        static let storyboardName = "MainViewController"
+    }
 
     // MARK: - Outlets
 
@@ -28,7 +33,7 @@ class MainViewController: UIViewController {
     // MARK: - Initialization
 
     class func instantiate(viewModel: MainControllerViewModel) -> MainViewController {
-        let controller = UIStoryboard(name: "MainViewController", bundle: nil).instantiateInitialViewController() as! MainViewController
+        let controller = UIStoryboard(name: Constants.storyboardName, bundle: nil).instantiateInitialViewController() as! MainViewController
         controller.viewModel = viewModel
         return controller
     }
@@ -68,16 +73,19 @@ class MainViewController: UIViewController {
     // MARK: - UI Callbacks
 
     @IBAction private func sessionsAction(_ sender: Any) {
+        if viewModel.isBreathing {
+            recorder.stopRecording()
+            viewModel.endCurrentSession()
+        }
+
         didTapSessions?()
     }
 
     @IBAction private func breatheAction(_ sender: Any) {
         if viewModel.isBreathing {
-            print("Stop breathing")
             recorder.stopRecording()
             viewModel.endCurrentSession()
         } else {
-            print("Breathe")
             recorder.startRecording()
             viewModel.startNewSession()
         }

@@ -1,5 +1,5 @@
 //
-//  DateHelper.swift
+//  DateTimeHelper.swift
 //  BreatheMe
 //
 //  Created by Denis Kovalev on 17.10.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DateHelper {
+class DateTimeHelper {
 
     // MARK: - Formatters
 
@@ -59,5 +59,15 @@ class DateHelper {
 
     static func formattedTimeFromDate(_ date: Date) -> String {
         dayTimeFormatter.string(from: date)
+    }
+
+    static func formattedDuration(from fromDate: Date, to toDate: Date) -> String {
+        let interval = fromDate.distance(to: toDate)
+        let scaled = Int((interval * 1000.0).rounded(.towardZero))
+
+        let seconds = scaled / 1000
+        let milliseconds = scaled % 1000
+
+        return "\(seconds)s \(milliseconds)ms"
     }
 }
