@@ -7,11 +7,15 @@
 
 import Foundation
 
+/// A session class - main DI container of the app. Holds almost all dependencies and should be passed everywhere
 class AppSession {
+    // MARK: - Properties
 
     let dataManager: DataManager
     let sessionRepository: SessionRepository
     let recordRepository: RecordRepository
+
+    // MARK: - Initialization
 
     init(dataManager: DataManager, sessionRepository: SessionRepository, recordRepository: RecordRepository) {
         self.dataManager = dataManager

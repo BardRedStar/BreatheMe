@@ -22,12 +22,14 @@ class BreatheProcessor: NSObject {
 
     // MARK: - Processing methods
 
+    /// Resets processor values to defaults
     func reset() {
         confirmedStage = .delay
         newStageStreak = 0
         newSupposedStage = .delay
     }
 
+    /// Detects breathe stage from volume `value`
     func processNewVolumeValue(_ value: Float) {
         let stage: BreatheStage
         switch value {

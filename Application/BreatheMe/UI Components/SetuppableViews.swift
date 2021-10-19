@@ -75,5 +75,6 @@ class SetuppableTableHeaderFooterView: UITableViewHeaderFooterView {
         setup()
     }
 
+    /// Proceeds view's initialization logic. override for basic configuration.
     func setup() {}
 }

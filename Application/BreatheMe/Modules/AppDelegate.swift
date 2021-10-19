@@ -17,11 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        // Create window
         window = UIWindow()
         window?.makeKeyAndVisible()
 
+        // Set up nav bar appearance
         setNavbarTransparent()
 
+        // Configure DI
         let database = Database()
         let dataManager = DataManager(database: database)
         let sessionDao = SessionDao()
@@ -30,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let recordRepository = RecordRepository(database: database, recordDao: recordDao)
         let session = AppSession(dataManager: dataManager, sessionRepository: sessionRepository, recordRepository: recordRepository)
 
+        // Setup and start routing
         appRouter = AppRouter(window: window!, session: session)
         appRouter.start()
 
@@ -38,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - UI Methods
 
+    /// Sets navbar transparent along the whole app
     private func setNavbarTransparent() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()

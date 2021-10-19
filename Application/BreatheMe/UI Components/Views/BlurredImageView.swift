@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// An image view with blur effect
 class BlurredImageView: SetuppableView {
 
     // MARK: - UI Controls
@@ -21,6 +22,7 @@ class BlurredImageView: SetuppableView {
 
     // MARK: - Properties
 
+    /// Image, which will be blurred
     var image: UIImage? {
         get {
             imageView.image
@@ -30,6 +32,7 @@ class BlurredImageView: SetuppableView {
         }
     }
 
+    /// Blur alpha level
     var blurAlpha: CGFloat {
         get {
             blurEffectView.alpha

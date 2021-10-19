@@ -7,18 +7,26 @@
 
 import Foundation
 
+/// A manager class for working with file system
 class FileIOManager {
+    // MARK: - Properties
 
     private var fileHandle: FileHandle?
+
+    // MARK: - Deinitialization
 
     deinit {
         fileHandle?.closeFile()
     }
 
+    // MARK: - File system methods
+
+    /// Creates an empty file and returns its url
     func createFileForShare() -> URL {
          URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("yoga_training.txt")
     }
 
+    /// Appends `text` to the end of file at `fileURL`. Doesn't close file connection after writing, use `commit()` for this.
     func appendText(text: String, to fileURL: URL) throws {
         guard let data = text.data(using: .utf8) else { return }
 
@@ -31,8 +39,10 @@ class FileIOManager {
         }
     }
 
+    /// Closes opened file connection
     func commmit() {
         fileHandle?.closeFile()
+        fileHandle = nil
     }
 
 }

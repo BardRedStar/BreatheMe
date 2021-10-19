@@ -7,13 +7,17 @@
 
 import CoreData
 
-
+/// A database class, which contains members related to database
 class Database {
 
+    // MARK: - Properties
+
+    /// Current context object
     var context: NSManagedObjectContext {
         persistentContainer.viewContext
     }
 
+    /// Persistent container object
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "BreatheMe")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -24,14 +28,12 @@ class Database {
         return container
     }()
 
+    // MARK: - Data Methods
+
+    /// Saves changes in database if needed
     func saveContext() {
         if context.hasChanges {
-            do {
-                try context.save()
-                print("context saved")
-            } catch {
-                print("error while saving context \(error.localizedDescription)")
-            }
+            try? context.save()
         }
     }
 

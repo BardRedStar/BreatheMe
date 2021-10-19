@@ -7,10 +7,13 @@
 
 import Foundation
 
+/// A view model class for session list screen
 class SessionListControllerViewModel {
     // MARK: - Definitions
 
+    /// Constants
     enum Constants {
+        /// Number of sessions per page
         static let sessionsPerPage: Int = 20
     }
 
@@ -30,9 +33,13 @@ class SessionListControllerViewModel {
     private var sectionDates: [String] = []
 
     /// Pagination
+
+    /// Current content page
     private var page: Int = 0
+    /// A flag whether to load a new batch of sessions or not
     var isReadyForLoading: Bool = true
 
+    /// Number of sections (sessions grouped by days)
     var numberOfSections: Int {
         sectionDates.count
     }
@@ -45,6 +52,7 @@ class SessionListControllerViewModel {
 
     // MARK: - Data Methods
 
+    /// Loads a new page of sessions
     func loadData() {
         if !isReadyForLoading {
             return
@@ -69,7 +77,6 @@ class SessionListControllerViewModel {
                 self.appendSessions(sessions)
 
                 self.page += 1
-                print("Page: \(self.page)")
 
                 self.didUpdateData?()
 
@@ -79,6 +86,7 @@ class SessionListControllerViewModel {
         }
     }
 
+    /// Retrieves a UI model for session in` `section` at `position`
     func sessionViewModelFor(section: Int, position: Int) -> SessionListCell.ViewModel? {
         guard let session = breatheSessions[sectionDates[section]]?[position] else { return nil }
         let records = session.record?.allObjects.compactMap { $0 as? Record } ?? []
@@ -90,23 +98,28 @@ class SessionListControllerViewModel {
                                          endDate: session.endDate.flatMap { DateTimeHelper.formattedTimeFromDate($0) } ?? "...")
     }
 
+    /// Gets string representation of date for `section`
     func dateForSection(_ section: Int) -> String {
         sectionDates[section]
     }
 
+    /// Gets number of sessions in `section`
     func numberOfSessionsFor(section: Int) -> Int {
         breatheSessions[sectionDates[section]]?.count ?? 0
     }
 
+    /// Gets particular session in `section` at `position`
     func sessionFor(section: Int, position: Int) -> Session? {
         breatheSessions[sectionDates[section]]?[position]
     }
 
+    /// Creates a temp file and dumps all sessions batch by batch
     func prepareSessionsForShare() {
         let file = fileIOManager.createFileForShare()
         loadAndWriteSessions(to: file, page: 0)
     }
 
+    /// Recursively loads sessions by pages and write them to `file`
     private func loadAndWriteSessions(to file: URL, page: Int) {
         appSession.sessionRepository.getSessions(limit: Constants.sessionsPerPage,
                                                  offset: page * Constants.sessionsPerPage) { [weak self] result in
@@ -153,6 +166,7 @@ class SessionListControllerViewModel {
         }
     }
 
+    /// Appends new sessions to cached data arrays
     private func appendSessions(_ sessions: [Session]) {
         sessions.forEach {
             let date = DateTimeHelper.formattedDayFromDate($0.startDate)

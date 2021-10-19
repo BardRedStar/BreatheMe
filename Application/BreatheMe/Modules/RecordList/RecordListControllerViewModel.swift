@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A view model class for record list screen
 class RecordListControllerViewModel {
 
     // MARK: - Output
@@ -21,6 +22,7 @@ class RecordListControllerViewModel {
 
     private let records: [Record]
 
+    /// Number of records in current session
     var numberOfRecords: Int {
         session.record?.count ?? 0
     }
@@ -35,10 +37,12 @@ class RecordListControllerViewModel {
 
     // MARK: - Data Methods
 
+    /// Loads data
     func loadData() {
         didDataUpdate?()
     }
 
+    /// Retrieves record UI model for `position`
     func recordViewModelFor(position: Int) -> RecordListCell.ViewModel? {
         let record = records[position]
 

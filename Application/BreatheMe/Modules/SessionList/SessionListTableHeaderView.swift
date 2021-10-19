@@ -7,12 +7,15 @@
 
 import UIKit
 
+/// A class for header on sessions list screen
 class SessionListTableHeaderView: SetuppableTableHeaderFooterView {
     // MARK: - Definitions
 
+    /// Constants
     enum Constants {
+        /// A reuse identifier for current header class
         static let reuseIdentifier = "SessionListTableHeaderView"
-
+        /// Inset for label content from borders
         static let contentInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     }
 
@@ -64,6 +67,7 @@ class SessionListTableHeaderView: SetuppableTableHeaderFooterView {
 
     // MARK: - UI Methods
 
+    /// Sets up header with `date`
     func configureWith(date: String) {
         dateLabel.text = date
     }
