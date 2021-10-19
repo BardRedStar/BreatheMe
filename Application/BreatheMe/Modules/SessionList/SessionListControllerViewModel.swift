@@ -16,12 +16,15 @@ class SessionListControllerViewModel {
 
     // MARK: - Output
 
-    var didDataUpdate: (() -> Void)?
+    var didUpdateData: (() -> Void)?
     var didError: ((Error) -> Void)?
+    var didExportSessions: ((URL) -> Void)?
 
     // MARK: - Properties
 
     let appSession: AppSession
+
+    private let fileIOManager = FileIOManager()
 
     private var breatheSessions: [String: [Session]] = [:]
     private var sectionDates: [String] = []
@@ -68,7 +71,7 @@ class SessionListControllerViewModel {
                 self.page += 1
                 print("Page: \(self.page)")
 
-                self.didDataUpdate?()
+                self.didUpdateData?()
 
             case let .failure(error):
                 self.didError?(error)
@@ -97,6 +100,57 @@ class SessionListControllerViewModel {
 
     func sessionFor(section: Int, position: Int) -> Session? {
         breatheSessions[sectionDates[section]]?[position]
+    }
+
+    func prepareSessionsForShare() {
+        let file = fileIOManager.createFileForShare()
+        loadAndWriteSessions(to: file, page: 0)
+    }
+
+    private func loadAndWriteSessions(to file: URL, page: Int) {
+        appSession.sessionRepository.getSessions(limit: Constants.sessionsPerPage,
+                                                 offset: page * Constants.sessionsPerPage) { [weak self] result in
+            switch result {
+            case let .success(batch):
+
+                if batch.isEmpty {
+                    self?.fileIOManager.commmit()
+                    self?.didExportSessions?(file)
+                    return
+                }
+
+                let text = batch
+                    .map {
+                        let startDateString = DateTimeHelper.formattedTimeFromDate($0.startDate)
+                        let endDateString = $0.endDate.flatMap { DateTimeHelper.formattedTimeFromDate($0) } ?? "..."
+                        let sessionString = "\(startDateString) - \(endDateString)"
+                        let recordsString = $0.record?.allObjects
+                            .map { $0 as! Record }
+                            .sorted { $0.startDate < $1.startDate }
+                            .map {
+                                let type = BreatheStage(rawValue: $0.type)?.presentationString ?? "Unknown"
+                                let duration = DateTimeHelper.formattedDuration(from: $0.startDate, to: $0.endDate ?? Date())
+                                return "\(type) - \(duration)"
+                            }
+                            .joined(separator: "\n") ?? ""
+                        return "[\n\(sessionString)\n\(recordsString)\n]\n"
+                    }
+                    .joined(separator: "\n")
+
+                do {
+                    try self?.fileIOManager.appendText(text: text, to: file)
+                } catch {
+                    self?.fileIOManager.commmit()
+                    self?.didError?(error)
+                }
+
+                self?.loadAndWriteSessions(to: file, page: page + 1)
+
+            case let .failure(error):
+                self?.didError?(error)
+                self?.fileIOManager.commmit()
+            }
+        }
     }
 
     private func appendSessions(_ sessions: [Session]) {

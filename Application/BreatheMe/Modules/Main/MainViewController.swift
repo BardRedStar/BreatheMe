@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
     // MARK: - UI Methods
 
     private func configureRecorder() {
-        recorder.isFakeMode = true
+        recorder.isFakeMode = false
 
         recorder.didRecordVolumeValue = { [weak self] value in
             self?.processor.processNewVolumeValue(value)

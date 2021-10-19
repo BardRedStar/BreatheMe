@@ -7,8 +7,10 @@
 
 import UIKit
 
+/// A helper class for presenting different alerts
 class AlertHelper {
 
+    /// Shows errror alert with "Something went wrong" title
     static func showErrorAlertWith(message: String? = nil,
                                    target: UIViewController,
                                    buttonTitle: String = "OK",

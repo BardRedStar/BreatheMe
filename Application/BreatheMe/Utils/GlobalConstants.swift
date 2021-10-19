@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Global constants
 enum GlobalConstants {
+    /// Email of the best yoga coach ever
     static let coachEmailAddress: String = "best_yoga_coach@yandex.ru"
 }

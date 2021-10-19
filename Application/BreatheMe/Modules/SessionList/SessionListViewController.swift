@@ -40,6 +40,7 @@ class SessionListViewController: UIViewController {
     // MARK: - Properties
 
     private var viewModel: SessionListControllerViewModel!
+    private lazy var mailComposerPresenter: MailComposerPresenter = MailComposerPresenter()
 
     // MARK: - Initialization
 
@@ -98,7 +99,7 @@ class SessionListViewController: UIViewController {
     }
 
     private func bindViewModelActions() {
-        viewModel.didDataUpdate = { [weak self] in
+        viewModel.didUpdateData = { [weak self] in
             self?.tableView.reloadData()
         }
 
@@ -107,12 +108,20 @@ class SessionListViewController: UIViewController {
 
             AlertHelper.showErrorAlertWith(message: error.localizedDescription, target: self)
         }
+
+        viewModel.didExportSessions = { [weak self] fileUrl in
+            guard let self = self else { return }
+            self.mailComposerPresenter.present(on: self, attachFile: fileUrl)
+        }
     }
 
     // MARK: - UI Callbacks
 
     @objc private func shareAction() {
-        print("share")
+        if !mailComposerPresenter.canSendEmail {
+            AlertHelper.showErrorAlertWith(message: "Sorry, your device doesn't support email sending", target: self)
+        }
+        viewModel.prepareSessionsForShare()
     }
 }
 
