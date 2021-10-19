@@ -21,6 +21,11 @@ class FileIOManager {
 
     // MARK: - File system methods
 
+    /// Deletes `file`
+    func deleteFile(_ file: URL) {
+        try? FileManager.default.removeItem(at: file)
+    }
+
     /// Creates an empty file and returns its url
     func createFileForShare() -> URL {
          URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("yoga_training.txt")
