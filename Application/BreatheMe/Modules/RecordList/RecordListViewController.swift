@@ -61,7 +61,7 @@ class RecordListViewController: UIViewController {
 
     /// Sets up navigation bar
     private func configureNavBar() {
-        navigationItem.title = "Detailed Statistics"
+        navigationItem.title = "RecordList-Title".localized()
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.tintColor = .white
     }

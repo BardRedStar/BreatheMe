@@ -36,7 +36,7 @@ class RecordRepository {
                                             endDate: endDate,
                                             session: session,
                                             context: database.context) else {
-            completion(.failure(CoreDataError.createNewObject("Couldn't create new record")))
+            completion(.failure(CoreDataError.createNewObject("Error-Cant-Create-Record".localized())))
             return
         }
         completion(.success(record))

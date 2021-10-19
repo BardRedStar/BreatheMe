@@ -35,7 +35,7 @@ class MailComposerPresenter: NSObject {
         controller.mailComposeDelegate = self
 
         if let data = data {
-            controller.addAttachmentData(data, mimeType: "text/plain", fileName: "yoga_training.txt")
+            controller.addAttachmentData(data, mimeType: GlobalConstants.tempFileMimeType, fileName: GlobalConstants.tempFileName)
         }
 
         presentationController.present(controller, animated: true, completion: nil)

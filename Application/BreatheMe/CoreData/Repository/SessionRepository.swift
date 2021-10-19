@@ -37,7 +37,7 @@ class SessionRepository {
     func createSessionWith(startDate: Date, endDate: Date?, completion: (Result<Session, Error>) -> Void ) {
 
         guard let session = sessionDao.insert(startDate: startDate, endDate: endDate, context: database.context) else {
-            completion(.failure(CoreDataError.createNewObject("Couldn't create new session")))
+            completion(.failure(CoreDataError.createNewObject("Error-Cant-Create-Session".localized())))
             return
         }
 

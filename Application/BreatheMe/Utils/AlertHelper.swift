@@ -13,9 +13,9 @@ class AlertHelper {
     /// Shows errror alert with "Something went wrong" title
     static func showErrorAlertWith(message: String? = nil,
                                    target: UIViewController,
-                                   buttonTitle: String = "OK",
+                                   buttonTitle: String = "Alert-Button-OK".localized(),
                                    buttonAction: (() -> Void)? = nil) {
-        let controller = UIAlertController(title: "Something went wrong", message: message, preferredStyle: .alert)
+        let controller = UIAlertController(title: "Alert-Error-Title".localized(), message: message, preferredStyle: .alert)
         controller.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: { _ in buttonAction?() }))
         target.present(controller, animated: true, completion: nil)
     }

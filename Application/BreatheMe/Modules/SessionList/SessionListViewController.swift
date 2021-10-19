@@ -68,14 +68,11 @@ class SessionListViewController: UIViewController {
 
     /// Sets up navigation bar
     private func configureNavBar() {
-        let button = UIButton()
-        button.setTitle("Share", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 14)
-        button.titleLabel?.textColor = .white
-        button.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        let button = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
+        button.tintColor = .white
+        navigationItem.rightBarButtonItem = button
 
-        navigationItem.title = "Your breathe sessions"
+        navigationItem.title = "SessionList-Title".localized()
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.tintColor = .white
     }
@@ -127,7 +124,7 @@ class SessionListViewController: UIViewController {
     /// Share button tap handler
     @objc private func shareAction() {
         if !mailComposerPresenter.canSendEmail {
-            AlertHelper.showErrorAlertWith(message: "Sorry, your device doesn't support email sending", target: self)
+            AlertHelper.showErrorAlertWith(message: "Alert-Email-Unsupported-Message".localized(), target: self)
         }
         viewModel.prepareSessionsForShare()
     }

@@ -115,7 +115,7 @@ class SessionListCell: SetuppableTableViewCell {
     /// Sets up cell with UI `model`
     func configureWith(model: ViewModel) {
         durationLabel.text = "\(model.startDate) - \(model.endDate)"
-        inhalesCountLabel.text = "Inhales: \(model.inhales)"
-        exhalesCountLabel.text = "Exhales: \(model.exhales)"
+        inhalesCountLabel.text = "SessionList-Inhales-Label".localized() + "\(model.inhales)"
+        exhalesCountLabel.text = "SessionList-Exhales-Label".localized() + "\(model.exhales)"
     }
 }

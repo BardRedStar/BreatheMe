@@ -15,7 +15,6 @@ class MainBreatheButton: SetuppableButton {
     override func setup() {
         super.setup()
 
-        setTitle("Main-Breathe-Button-Title".localized(), for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 20)
         titleLabel?.textColor = UIColor(named: "primary")
 

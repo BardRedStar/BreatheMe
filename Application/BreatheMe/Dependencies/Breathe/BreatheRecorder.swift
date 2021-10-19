@@ -152,12 +152,12 @@ class BreatheRecorder {
     private func showPermissionDeniedAlert() {
         guard let parent = parentController else { return }
 
-        let controller = UIAlertController(title: "Microphone permission denied",
-                                           message: "You've denied the microphone permission. App can't hear your breathe, so, please, go to settings and enable permission from there.",
+        let controller = UIAlertController(title: "Alert-Microphone-Permission-Title".localized(),
+                                           message: "Alert-Microphone-Permission-Message".localized(),
                                            preferredStyle: .alert)
-        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        controller.addAction(UIAlertAction(title: "Alert-Button-Cancel".localized(), style: .cancel, handler: nil))
 
-        controller.addAction(UIAlertAction(title: "Open Settings", style: .default) { _ in
+        controller.addAction(UIAlertAction(title: "Alert-Button-Open-Settings".localized(), style: .default) { _ in
             if let appSettings = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
             }
