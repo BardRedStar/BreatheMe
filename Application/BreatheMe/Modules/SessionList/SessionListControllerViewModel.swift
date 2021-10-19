@@ -113,6 +113,13 @@ class SessionListControllerViewModel {
         breatheSessions[sectionDates[section]]?[position]
     }
 
+    // MARK: - Sharing
+
+    /// Removes temp file from filesystem
+    func finishMailFor(file: URL) {
+        fileIOManager.deleteFile(file)
+    }
+
     /// Creates a temp file and dumps all sessions batch by batch
     func prepareSessionsForShare() {
         let file = fileIOManager.createFileForShare()

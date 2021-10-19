@@ -116,7 +116,9 @@ class SessionListViewController: UIViewController {
 
         viewModel.didExportSessions = { [weak self] fileUrl in
             guard let self = self else { return }
-            self.mailComposerPresenter.present(on: self, attachFile: fileUrl)
+            self.mailComposerPresenter.present(on: self, attachFile: fileUrl) { [weak self] in
+                self?.viewModel.finishMailFor(file: fileUrl)
+            }
         }
     }
 
