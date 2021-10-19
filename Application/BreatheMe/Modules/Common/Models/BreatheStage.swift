@@ -12,9 +12,9 @@ enum BreatheStage: String {
     /// A string representing stage on UI
     var presentationString: String {
         switch self {
-        case .delay: return "Breathe delay"
-        case .exhale: return "Exhale"
-        case .inhale: return "Inhale"
+        case .delay: return "Share-Breathe-Type-Delay".localized()
+        case .exhale: return "Share-Breathe-Type-Exhale".localized()
+        case .inhale: return "Share-Breathe-Type-Inhale".localized()
         }
     }
 }

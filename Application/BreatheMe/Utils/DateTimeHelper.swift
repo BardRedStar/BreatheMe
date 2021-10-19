@@ -44,11 +44,11 @@ class DateTimeHelper {
         calendar.timeZone = TimeZone.current
 
         if calendar.isDateInToday(date) {
-            return "Today"
+            return "DateTime-Today".localized()
         }
 
         if calendar.isDateInYesterday(date) {
-            return "Yesterday"
+            return "DateTime-Yesterday".localized()
         }
 
         let currentDate = Date()

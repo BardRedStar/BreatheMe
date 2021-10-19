@@ -9,6 +9,11 @@ import CoreData
 
 /// A database class, which contains members related to database
 class Database {
+    // MARK: - Definitions
+
+    enum Constants {
+        static let containerName = "BreatheMe"
+    }
 
     // MARK: - Properties
 
@@ -19,7 +24,7 @@ class Database {
 
     /// Persistent container object
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "BreatheMe")
+        let container = NSPersistentContainer(name: Constants.containerName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

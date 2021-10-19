@@ -28,7 +28,7 @@ class FileIOManager {
 
     /// Creates an empty file and returns its url
     func createFileForShare() -> URL {
-         URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("yoga_training.txt")
+        URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent(GlobalConstants.tempFileName)
     }
 
     /// Appends `text` to the end of file at `fileURL`. Doesn't close file connection after writing, use `commit()` for this.

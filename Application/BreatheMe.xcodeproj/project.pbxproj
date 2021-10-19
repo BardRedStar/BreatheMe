@@ -150,7 +150,6 @@
 			children = (
 				56D5403A270DECB000EC0C84 /* SetuppableViews.swift */,
 				56D54040270DED8F00EC0C84 /* Views */,
-				56D5403E270DED7D00EC0C84 /* Buttons */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -261,13 +260,6 @@
 				56D54050270DF01B00EC0C84 /* MainControllerViewModel.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		56D5403E270DED7D00EC0C84 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 		56D5403F270DED8600EC0C84 /* Models */ = {

@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet private var backgroundImageView: BlurredImageView!
     @IBOutlet private var breatheButton: MainBreatheButton!
+    @IBOutlet private var sessionsButton: UIButton!
 
     // MARK: - Output
 
@@ -52,6 +53,9 @@ class MainViewController: UIViewController {
         backgroundImageView.image = UIImage(named: "background")
         backgroundImageView.blurAlpha = 0.75
 
+        breatheButton.setTitle("Main-Breathe-Button-Title".localized(), for: .normal)
+        sessionsButton.setTitle("Main-Sessions-Button-Title".localized(), for: .normal)
+        
         configureRecorder()
         configureProcessor()
     }
