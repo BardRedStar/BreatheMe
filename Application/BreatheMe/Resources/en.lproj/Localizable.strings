@@ -8,19 +8,23 @@
 
 // Main
 
-"Main-Breathe-Button-Title" = "Breathe Me";
-"Main-Sessions-Button-Title" = "Sessions";
+"Main-Breathe-Button-Title-Start" = "Breathe Me";
+"Main-Breathe-Button-Title-Stop" = "Stop Breathing";
+"Main-Sessions-Button-Title" = "Go to sessions list";
+"Main-Welcome-Text" = "Welcome to the yoga\nbreathe training";
+
+// Session
+
+"Session-Inhales-Label" = "Inhales: ";
+"Session-Exhales-Label" = "Exhales: ";
 
 // Session List
 
-"SessionList-Inhales-Label" = "Inhales: ";
-"SessionList-Exhales-Label" = "Exhales: ";
 "SessionList-Title" = "Your breathe sessions";
 
 // Record List
 
 "RecordList-Title" = "Detailed Statistics";
-
 
 // Errors
 
@@ -42,9 +46,10 @@
 "DateTime-Today" = "Today";
 "DateTime-Yesterday" = "Yesterday";
 
-// Share
+// Breathe types
 
-"Share-Breathe-Type-Unknown" = "Unknown";
-"Share-Breathe-Type-Inhale" = "Inhale";
-"Share-Breathe-Type-Exhale" = "Exhale";
-"Share-Breathe-Type-Delay" = "Breathe delay";
+"Breathe-Type-Unknown" = "Unknown";
+"Breathe-Type-Inhale" = "Inhale";
+"Breathe-Type-Exhale" = "Exhale";
+"Breathe-Type-Delay" = "Breathe delay";
+

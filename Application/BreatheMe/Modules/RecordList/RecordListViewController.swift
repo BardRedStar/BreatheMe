@@ -15,7 +15,7 @@ class RecordListViewController: UIViewController {
     private lazy var backgroundImageView: BlurredImageView = {
         let view = BlurredImageView()
         view.image = UIImage(named: "background")
-        view.blurAlpha = 0.75
+        view.blurAlpha = 0.6
         return view
     }()
 
@@ -62,8 +62,9 @@ class RecordListViewController: UIViewController {
     /// Sets up navigation bar
     private func configureNavBar() {
         navigationItem.title = "RecordList-Title".localized()
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "accent")!,
+                                                                   .font: Fonts.viaodaLibreRegular(ofSize: 24)]
+        navigationController?.navigationBar.tintColor = UIColor(named: "accent")
     }
 
     /// Sets up general constraints and hierarchy

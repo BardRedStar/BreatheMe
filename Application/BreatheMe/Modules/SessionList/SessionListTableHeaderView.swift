@@ -30,9 +30,9 @@ class SessionListTableHeaderView: SetuppableTableHeaderFooterView {
 
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 12)
+        label.font = Fonts.viaodaLibreRegular(ofSize: 17)
         label.numberOfLines = 1
-        label.textColor = .gray
+        label.textColor = UIColor(named: "primary-dark")
         return label
     }()
 

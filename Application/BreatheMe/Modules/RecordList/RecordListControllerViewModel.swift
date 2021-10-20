@@ -46,7 +46,7 @@ class RecordListControllerViewModel {
     func recordViewModelFor(position: Int) -> RecordListCell.ViewModel? {
         let record = records[position]
 
-        let type = BreatheStage(rawValue: record.type)?.presentationString ?? "Share-Breathe-Type-Unknown".localized()
+        let type = BreatheStage(rawValue: record.type)?.presentationString ?? "Breathe-Type-Unknown".localized()
         let duration = DateTimeHelper.formattedDuration(from: record.startDate, to: record.endDate ?? Date())
         return RecordListCell.ViewModel(type: type, duration: duration)
     }

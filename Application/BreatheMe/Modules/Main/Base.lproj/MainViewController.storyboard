@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ViaodaLibre-Regular.ttf">
+            <string>ViaodaLibre-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,49 +21,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57u-94-f34" customClass="BlurredImageView" customModule="BreatheMe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57u-94-f34" customClass="BlurredImageView" customModule="BreatheMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5e-XO-eaA">
-                                <rect key="frame" x="282" y="94" width="72" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Sessions">
-                                    <color key="titleColor" red="0.1960784314" green="0.2666666667" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="sessionsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0V-2t-B0X"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfT-Gx-wcL" customClass="MainBreatheButton" customModule="BreatheMe" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the yoga  breathe training" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-b0-zYZ">
+                                <rect key="frame" x="20" y="64" width="274" height="93.5"/>
+                                <fontDescription key="fontDescription" name="ViaodaLibre-Regular" family="Viaoda Libre" pointSize="33"/>
+                                <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="52" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-8E-xG7" customClass="BlurredButtonView" customModule="BreatheMe" customModuleProvider="target">
+                                <rect key="frame" x="87" y="790" width="240" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnx-HA-Vc7" customClass="MainBreatheButtonView" customModule="BreatheMe" customModuleProvider="target">
                                 <rect key="frame" x="107" y="353" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="MWD-ec-dNS"/>
-                                    <constraint firstAttribute="height" constant="200" id="iv9-FX-5c2"/>
+                                    <constraint firstAttribute="height" constant="200" id="6f8-kB-9mX"/>
+                                    <constraint firstAttribute="width" constant="200" id="B5s-Dl-SgV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Breathe Me">
-                                    <color key="titleColor" red="0.1960784314" green="0.2666666667" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="breatheAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OL0-Uw-Qxn"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duP-GD-8cf" customClass="MainBreatheSessionValuesView" customModule="BreatheMe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="229" width="374" height="130"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="By3-Q8-DYA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OfT-Gx-wcL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0fq-kh-MT0"/>
-                            <constraint firstItem="OfT-Gx-wcL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I3y-Lh-xZF"/>
-                            <constraint firstItem="b5e-XO-eaA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Rsn-GX-3fR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b5e-XO-eaA" secondAttribute="trailing" constant="60" id="gxx-Dk-Nzt"/>
+                            <constraint firstItem="57u-94-f34" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="4by-Kv-fnN"/>
+                            <constraint firstItem="rnx-HA-Vc7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8LQ-YE-3fv"/>
+                            <constraint firstItem="57u-94-f34" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hfb-nH-Hx2"/>
+                            <constraint firstAttribute="top" secondItem="57u-94-f34" secondAttribute="top" id="Kh7-zr-WqS"/>
+                            <constraint firstItem="duP-GD-8cf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P9f-dm-uTH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GvX-8E-xG7" secondAttribute="bottom" constant="20" id="Qwv-Ff-Xzl"/>
+                            <constraint firstAttribute="trailing" secondItem="57u-94-f34" secondAttribute="trailing" id="Smi-12-p3f"/>
+                            <constraint firstItem="GvX-8E-xG7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cY1-1x-pAO"/>
+                            <constraint firstItem="rnx-HA-Vc7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kxd-8t-mEr"/>
+                            <constraint firstItem="8Zf-b0-zYZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="lRk-lE-69m"/>
+                            <constraint firstItem="rnx-HA-Vc7" firstAttribute="top" secondItem="duP-GD-8cf" secondAttribute="bottom" constant="-6" id="mJp-DF-4Hb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="duP-GD-8cf" secondAttribute="trailing" constant="20" id="qrV-GH-wuc"/>
+                            <constraint firstItem="8Zf-b0-zYZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rOh-DJ-GuX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="57u-94-f34" id="uIR-47-wrV"/>
-                        <outlet property="breatheButton" destination="OfT-Gx-wcL" id="bIr-dv-PHG"/>
-                        <outlet property="sessionsButton" destination="b5e-XO-eaA" id="V5a-z3-JS7"/>
+                        <outlet property="breatheButtonView" destination="rnx-HA-Vc7" id="M0U-6K-7Qw"/>
+                        <outlet property="sessionsButtonView" destination="GvX-8E-xG7" id="Cnn-pz-jHN"/>
+                        <outlet property="statisticsView" destination="duP-GD-8cf" id="edv-zc-FFf"/>
+                        <outlet property="welcomeLabel" destination="8Zf-b0-zYZ" id="i5C-sk-gN1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

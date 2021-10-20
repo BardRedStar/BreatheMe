@@ -20,9 +20,11 @@ class MainViewController: UIViewController {
 
     // MARK: - Outlets
 
+    @IBOutlet private var welcomeLabel: UILabel!
     @IBOutlet private var backgroundImageView: BlurredImageView!
-    @IBOutlet private var breatheButton: MainBreatheButton!
-    @IBOutlet private var sessionsButton: UIButton!
+    @IBOutlet private var breatheButtonView: MainBreatheButtonView!
+    @IBOutlet private var sessionsButtonView: BlurredButtonView!
+    @IBOutlet private var statisticsView: MainBreatheSessionValuesView!
 
     // MARK: - Output
 
@@ -51,13 +53,25 @@ class MainViewController: UIViewController {
         navigationItem.title = ""
 
         backgroundImageView.image = UIImage(named: "background")
-        backgroundImageView.blurAlpha = 0.75
+        backgroundImageView.blurAlpha = 0.6
 
-        breatheButton.setTitle("Main-Breathe-Button-Title".localized(), for: .normal)
-        sessionsButton.setTitle("Main-Sessions-Button-Title".localized(), for: .normal)
+        welcomeLabel.text = "Main-Welcome-Text".localized()
+
+        sessionsButtonView.text = "Main-Sessions-Button-Title".localized()
+        sessionsButtonView.textInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        sessionsButtonView.didTapButton = { [weak self] in
+            self?.processSessionsAction()
+        }
+
+        breatheButtonView.title = "Main-Breathe-Button-Title-Start".localized()
+        breatheButtonView.didTapButton = { [weak self] in
+            self?.processBreatheAction()
+        }
         
         configureRecorder()
         configureProcessor()
+
+        performWelcomeAnimation()
     }
 
     // MARK: - UI Methods
@@ -75,13 +89,41 @@ class MainViewController: UIViewController {
             guard let self = self else { return }
 
             self.viewModel.processBreatheStage(stage)
+            self.statisticsView.configureWith(model: self.viewModel.sessionValuesViewModel())
         }
+    }
+
+    /// Performs welcome animation
+    private func performWelcomeAnimation() {
+        welcomeLabel.alpha = 0
+        breatheButtonView.alpha = 0
+        sessionsButtonView.alpha = 0
+
+        UIView.animate(withDuration: 1.0, delay: 0.5, options: [.curveEaseOut]) { [weak self] in
+            self?.welcomeLabel.alpha = 1
+        } completion: { finished in
+            if finished {
+                UIView.animate(withDuration: 1.0, delay: 1.0, options: [.curveEaseInOut]) { [weak self] in
+                    self?.breatheButtonView.alpha = 1
+                    self?.sessionsButtonView.alpha = 1
+                }
+            }
+        }
+
+    }
+
+    /// Sets statistics visible state
+    private func setStatisticsVisible(_ isVisible: Bool) {
+        viewModel.resetStatisticsValues()
+        statisticsView.configureWith(model: viewModel.sessionValuesViewModel())
+
+        statisticsView.isHidden = !isVisible
     }
 
     // MARK: - UI Callbacks
 
     /// Sessions button action
-    @IBAction private func sessionsAction(_ sender: Any) {
+    private func processSessionsAction() {
         if viewModel.isBreathing {
             recorder.stopRecording()
             viewModel.endCurrentSession()
@@ -91,11 +133,15 @@ class MainViewController: UIViewController {
     }
 
     /// Breathe button action
-    @IBAction private func breatheAction(_ sender: Any) {
+    private func processBreatheAction() {
         if viewModel.isBreathing {
+            setStatisticsVisible(false)
+            breatheButtonView.title = "Main-Breathe-Button-Title-Start".localized()
             recorder.stopRecording()
             viewModel.endCurrentSession()
         } else {
+            setStatisticsVisible(true)
+            breatheButtonView.title = "Main-Breathe-Button-Title-Stop".localized()
             recorder.startRecording()
             viewModel.startNewSession()
         }
