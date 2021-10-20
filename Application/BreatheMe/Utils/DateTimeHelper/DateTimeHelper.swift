@@ -14,14 +14,14 @@ class DateTimeHelper {
     /// A formatters with day and month format, e.g. "12 Sep"
     private static let dayMonthFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d"
+        formatter.dateFormat = "d MMM"
         return formatter
     }()
 
     /// A formatters with day, month and year format, e.g. "12 Sep 2021"
     private static let dayMonthYearFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d yyyy"
+        formatter.dateFormat = "d MMM yyyy"
         return formatter
     }()
 
@@ -69,7 +69,11 @@ class DateTimeHelper {
 
     /// Gets duration between `from` and `to` dates and formats it as seconds and milliseconds (e.g. "1s 123ms")
     static func formattedDuration(from fromDate: Date, to toDate: Date) -> String {
-        let interval = fromDate.distance(to: toDate)
+
+        let futureDate = max(fromDate, toDate)
+        let pastDate = min(fromDate, toDate)
+
+        let interval = pastDate.distance(to: futureDate)
         let scaled = Int((interval * 1000.0).rounded(.towardZero))
 
         let seconds = scaled / 1000
