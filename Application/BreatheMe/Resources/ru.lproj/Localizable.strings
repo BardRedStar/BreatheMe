@@ -8,19 +8,23 @@
 
 // Main
 
-"Main-Breathe-Button-Title" = "Подышать";
+"Main-Breathe-Button-Title-Start" = "Подышать";
+"Main-Breathe-Button-Title-Stop" = "Закончить\nупраженение";
 "Main-Sessions-Button-Title" = "Дыхательные сессии";
+"Main-Welcome-Text" = "Приветствую на твоей\nдыхательной тренировке";
+
+// Session
+
+"Session-Inhales-Label" = "Вдохов: ";
+"Session-Exhales-Label" = "Выдохов: ";
 
 // Session List
 
-"SessionList-Inhales-Label" = "Вдохов: ";
-"SessionList-Exhales-Label" = "Выдохов: ";
 "SessionList-Title" = "Ваши дыхательные сессии";
 
 // Record List
 
 "RecordList-Title" = "Статистика по сессии";
-
 
 // Errors
 

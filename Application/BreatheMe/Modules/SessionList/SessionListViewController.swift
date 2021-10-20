@@ -72,8 +72,11 @@ class SessionListViewController: UIViewController {
         button.tintColor = UIColor(named: "accent")
         navigationItem.rightBarButtonItem = button
 
+        navigationItem.backButtonTitle = ""
+
         navigationItem.title = "SessionList-Title".localized()
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "accent")]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "accent")!,
+                                                                   .font: Fonts.viaodaLibreRegular(ofSize: 24)]
         navigationController?.navigationBar.tintColor = UIColor(named: "accent")
     }
 

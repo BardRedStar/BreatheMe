@@ -29,6 +29,8 @@
 		56B1A11E271FAEB7009243CC /* DateTimeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A10E271FAE53009243CC /* DateTimeHelperTests.swift */; };
 		56B1A121271FC9B9009243CC /* BlurredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A120271FC9B9009243CC /* BlurredButtonView.swift */; };
 		56B1A123271FDAAA009243CC /* MainBreatheSessionValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A122271FDAAA009243CC /* MainBreatheSessionValuesView.swift */; };
+		56B1A126271FE438009243CC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A125271FE438009243CC /* Fonts.swift */; };
+		56B1A127271FE632009243CC /* ViaodaLibre-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56B1A124271FE3A4009243CC /* ViaodaLibre-Regular.ttf */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
 		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
 		56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404A270DEFCD00EC0C84 /* AppSession.swift */; };
@@ -89,6 +91,8 @@
 		56B1A118271FAEA5009243CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56B1A120271FC9B9009243CC /* BlurredButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredButtonView.swift; sourceTree = "<group>"; };
 		56B1A122271FDAAA009243CC /* MainBreatheSessionValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBreatheSessionValuesView.swift; sourceTree = "<group>"; };
+		56B1A124271FE3A4009243CC /* ViaodaLibre-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ViaodaLibre-Regular.ttf"; sourceTree = "<group>"; };
+		56B1A125271FE438009243CC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		56D54035270DEBD600EC0C84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		56D5403A270DECB000EC0C84 /* SetuppableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuppableViews.swift; sourceTree = "<group>"; };
 		56D5404A270DEFCD00EC0C84 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				56701C88271C1935004A0421 /* AlertHelper.swift */,
 				56D74AD3271DE26600587E08 /* GlobalConstants.swift */,
 				56D74AD5271DE55200587E08 /* MailComposerPresenter.swift */,
+				56B1A125271FE438009243CC /* Fonts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 		56D54032270DEBB900EC0C84 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				56B1A124271FE3A4009243CC /* ViaodaLibre-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				56484905270DE88900F4F04E /* LaunchScreen.storyboard in Resources */,
 				56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */,
 				56484902270DE88900F4F04E /* Assets.xcassets in Resources */,
+				56B1A127271FE632009243CC /* ViaodaLibre-Regular.ttf in Resources */,
 				564848FD270DE88800F4F04E /* MainViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +541,7 @@
 				56D74AD6271DE55200587E08 /* MailComposerPresenter.swift in Sources */,
 				56E27E9527187D17003E682A /* Database.swift in Sources */,
 				56D74AD4271DE26600587E08 /* GlobalConstants.swift in Sources */,
+				56B1A126271FE438009243CC /* Fonts.swift in Sources */,
 				56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

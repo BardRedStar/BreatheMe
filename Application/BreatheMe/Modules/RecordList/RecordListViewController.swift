@@ -62,8 +62,9 @@ class RecordListViewController: UIViewController {
     /// Sets up navigation bar
     private func configureNavBar() {
         navigationItem.title = "RecordList-Title".localized()
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "accent")!,
+                                                                   .font: Fonts.viaodaLibreRegular(ofSize: 24)]
+        navigationController?.navigationBar.tintColor = UIColor(named: "accent")
     }
 
     /// Sets up general constraints and hierarchy

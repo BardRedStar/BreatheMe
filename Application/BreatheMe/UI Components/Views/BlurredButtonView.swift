@@ -21,7 +21,7 @@ class BlurredButtonView: SetuppableView {
     private lazy var button: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        button.titleLabel?.font = Fonts.viaodaLibreRegular(ofSize: 25)
         button.setTitleColor(UIColor(named: "primary"), for: .normal)
         return button
     }()

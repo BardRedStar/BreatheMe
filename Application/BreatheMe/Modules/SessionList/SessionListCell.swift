@@ -45,7 +45,7 @@ class SessionListCell: SetuppableTableViewCell {
     private lazy var durationLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "primary-dark")
-        label.font = .systemFont(ofSize: 12)
+        label.font = Fonts.viaodaLibreRegular(ofSize: 15)
         label.numberOfLines = 1
         return label
     }()
@@ -53,7 +53,7 @@ class SessionListCell: SetuppableTableViewCell {
     private lazy var inhalesCountLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "primary-dark")
-        label.font = .systemFont(ofSize: 12)
+        label.font = Fonts.viaodaLibreRegular(ofSize: 15)
         label.numberOfLines = 1
         return label
     }()
@@ -61,7 +61,7 @@ class SessionListCell: SetuppableTableViewCell {
     private lazy var exhalesCountLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "primary-dark")
-        label.font = .systemFont(ofSize: 12)
+        label.font = Fonts.viaodaLibreRegular(ofSize: 15)
         label.numberOfLines = 1
         return label
     }()
@@ -115,7 +115,7 @@ class SessionListCell: SetuppableTableViewCell {
     /// Sets up cell with UI `model`
     func configureWith(model: ViewModel) {
         durationLabel.text = "\(model.startDate) - \(model.endDate)"
-        inhalesCountLabel.text = "SessionList-Inhales-Label".localized() + "\(model.inhales)"
-        exhalesCountLabel.text = "SessionList-Exhales-Label".localized() + "\(model.exhales)"
+        inhalesCountLabel.text = "Session-Inhales-Label".localized() + "\(model.inhales)"
+        exhalesCountLabel.text = "Session-Exhales-Label".localized() + "\(model.exhales)"
     }
 }

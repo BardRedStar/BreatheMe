@@ -21,7 +21,7 @@ class MainBreatheButtonView: SetuppableView {
     private lazy var breatheButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.titleLabel?.font = Fonts.viaodaLibreRegular(ofSize: 25)
         button.setTitleColor(UIColor(named: "primary"), for: .normal)
         return button
     }()

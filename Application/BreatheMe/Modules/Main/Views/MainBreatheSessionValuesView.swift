@@ -21,7 +21,7 @@ class MainBreatheSessionValuesView: SetuppableView {
 
     private lazy var inhalesLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20)
+        label.font = Fonts.viaodaLibreRegular(ofSize: 20)
         label.textColor = UIColor(named: "primary")
         label.numberOfLines = 1
         return label
@@ -29,7 +29,7 @@ class MainBreatheSessionValuesView: SetuppableView {
 
     private lazy var exhalesLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20)
+        label.font = Fonts.viaodaLibreRegular(ofSize: 20)
         label.textColor = UIColor(named: "primary")
         label.numberOfLines = 1
         return label
@@ -59,8 +59,8 @@ class MainBreatheSessionValuesView: SetuppableView {
     // MARK: - UI Methods
 
     func configureWith(model: ViewModel) {
-        inhalesLabel.text = "SessionList-Inhales-Label".localized() + "\(model.inhales)"
-        exhalesLabel.text = "SessionList-Exhales-Label".localized() + "\(model.exhales)"
+        inhalesLabel.text = "Session-Inhales-Label".localized() + "\(model.inhales)"
+        exhalesLabel.text = "Session-Exhales-Label".localized() + "\(model.exhales)"
 
         setNeedsLayout()
         layoutIfNeeded()

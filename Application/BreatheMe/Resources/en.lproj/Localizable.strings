@@ -13,16 +13,18 @@
 "Main-Sessions-Button-Title" = "Go to sessions list";
 "Main-Welcome-Text" = "Welcome to the yoga\nbreathe training";
 
+// Session
+
+"Session-Inhales-Label" = "Inhales: ";
+"Session-Exhales-Label" = "Exhales: ";
+
 // Session List
 
-"SessionList-Inhales-Label" = "Inhales: ";
-"SessionList-Exhales-Label" = "Exhales: ";
 "SessionList-Title" = "Your breathe sessions";
 
 // Record List
 
 "RecordList-Title" = "Detailed Statistics";
-
 
 // Errors
 
@@ -50,3 +52,4 @@
 "Breathe-Type-Inhale" = "Inhale";
 "Breathe-Type-Exhale" = "Exhale";
 "Breathe-Type-Delay" = "Breathe delay";
+
