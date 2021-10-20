@@ -24,6 +24,10 @@ English language support
 <img src="Screenshots/en3.PNG" alt="alt text" width="200" height="400">    
 </p>
 
+## Resources usage
+
+Background image and fonts are free-distributed and were taken from the Internet
+
 ## Author
 Denis Kovalev - den.kovalev999@gmail.com / bardgaming@yandex.ru
 
