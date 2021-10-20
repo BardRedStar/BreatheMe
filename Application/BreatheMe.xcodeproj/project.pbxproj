@@ -25,6 +25,8 @@
 		567FD62E271B29AA00D508A2 /* SessionListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FD62D271B29AA00D508A2 /* SessionListTableHeaderView.swift */; };
 		5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5696FFF727148624001E6A27 /* BreatheProcessor.swift */; };
 		56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0BEF927173995007BA6B4 /* BreatheStage.swift */; };
+		56B1A117271FAEA5009243CC /* BreatheMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A116271FAEA5009243CC /* BreatheMeTests.swift */; };
+		56B1A11E271FAEB7009243CC /* DateTimeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A10E271FAE53009243CC /* DateTimeHelperTests.swift */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
 		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
 		56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404A270DEFCD00EC0C84 /* AppSession.swift */; };
@@ -48,6 +50,16 @@
 		56E27EA32718825F003E682A /* SessionListControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27EA22718825F003E682A /* SessionListControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		56B1A119271FAEA5009243CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 564848EA270DE88800F4F04E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 564848F1270DE88800F4F04E;
+			remoteInfo = BreatheMe;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5606B780270F4D5300EA177A /* BreatheRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheRecorder.swift; sourceTree = "<group>"; };
 		56357126271EFDDF00D61325 /* FileIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileIOManager.swift; sourceTree = "<group>"; };
@@ -69,6 +81,10 @@
 		567FD62D271B29AA00D508A2 /* SessionListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListTableHeaderView.swift; sourceTree = "<group>"; };
 		5696FFF727148624001E6A27 /* BreatheProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheProcessor.swift; sourceTree = "<group>"; };
 		56B0BEF927173995007BA6B4 /* BreatheStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheStage.swift; sourceTree = "<group>"; };
+		56B1A10E271FAE53009243CC /* DateTimeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHelperTests.swift; sourceTree = "<group>"; };
+		56B1A114271FAEA5009243CC /* BreatheMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B1A116271FAEA5009243CC /* BreatheMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheMeTests.swift; sourceTree = "<group>"; };
+		56B1A118271FAEA5009243CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D54035270DEBD600EC0C84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		56D5403A270DECB000EC0C84 /* SetuppableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuppableViews.swift; sourceTree = "<group>"; };
 		56D5404A270DEFCD00EC0C84 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
@@ -101,6 +117,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56B1A111271FAEA5009243CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				564848F4270DE88800F4F04E /* BreatheMe */,
+				56B1A115271FAEA5009243CC /* BreatheMeTests */,
 				564848F3270DE88800F4F04E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				564848F2270DE88800F4F04E /* BreatheMe.app */,
+				56B1A114271FAEA5009243CC /* BreatheMeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,7 +182,7 @@
 		5648490F270DEA0A00F4F04E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				56701C85271C101B004A0421 /* DateTimeHelper.swift */,
+				56B1A10D271FAE47009243CC /* DateTimeHelper */,
 				56701C88271C1935004A0421 /* AlertHelper.swift */,
 				56D74AD3271DE26600587E08 /* GlobalConstants.swift */,
 				56D74AD5271DE55200587E08 /* MailComposerPresenter.swift */,
@@ -235,6 +260,24 @@
 				56B0BEF927173995007BA6B4 /* BreatheStage.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		56B1A10D271FAE47009243CC /* DateTimeHelper */ = {
+			isa = PBXGroup;
+			children = (
+				56701C85271C101B004A0421 /* DateTimeHelper.swift */,
+				56B1A10E271FAE53009243CC /* DateTimeHelperTests.swift */,
+			);
+			path = DateTimeHelper;
+			sourceTree = "<group>";
+		};
+		56B1A115271FAEA5009243CC /* BreatheMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				56B1A116271FAEA5009243CC /* BreatheMeTests.swift */,
+				56B1A118271FAEA5009243CC /* Info.plist */,
+			);
+			path = BreatheMeTests;
 			sourceTree = "<group>";
 		};
 		56D54032270DEBB900EC0C84 /* Fonts */ = {
@@ -365,17 +408,39 @@
 			productReference = 564848F2270DE88800F4F04E /* BreatheMe.app */;
 			productType = "com.apple.product-type.application";
 		};
+		56B1A113271FAEA5009243CC /* BreatheMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B1A11B271FAEA5009243CC /* Build configuration list for PBXNativeTarget "BreatheMeTests" */;
+			buildPhases = (
+				56B1A110271FAEA5009243CC /* Sources */,
+				56B1A111271FAEA5009243CC /* Frameworks */,
+				56B1A112271FAEA5009243CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56B1A11A271FAEA5009243CC /* PBXTargetDependency */,
+			);
+			name = BreatheMeTests;
+			productName = BreatheMeTests;
+			productReference = 56B1A114271FAEA5009243CC /* BreatheMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		564848EA270DE88800F4F04E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					564848F1270DE88800F4F04E = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					56B1A113271FAEA5009243CC = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 564848F1270DE88800F4F04E;
 					};
 				};
 			};
@@ -396,6 +461,7 @@
 			projectRoot = "";
 			targets = (
 				564848F1270DE88800F4F04E /* BreatheMe */,
+				56B1A113271FAEA5009243CC /* BreatheMeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -410,6 +476,13 @@
 				56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */,
 				56484902270DE88900F4F04E /* Assets.xcassets in Resources */,
 				564848FD270DE88800F4F04E /* MainViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B1A112271FAEA5009243CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +530,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56B1A110271FAEA5009243CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56B1A11E271FAEB7009243CC /* DateTimeHelperTests.swift in Sources */,
+				56B1A117271FAEA5009243CC /* BreatheMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56B1A11A271FAEA5009243CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 564848F1270DE88800F4F04E /* BreatheMe */;
+			targetProxy = 56B1A119271FAEA5009243CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		564848FB270DE88800F4F04E /* MainViewController.storyboard */ = {
@@ -644,6 +734,48 @@
 			};
 			name = Release;
 		};
+		56B1A11C271FAEA5009243CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z935R654UA;
+				INFOPLIST_FILE = BreatheMeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.redstar.BreatheMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreatheMe.app/BreatheMe";
+			};
+			name = Debug;
+		};
+		56B1A11D271FAEA5009243CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z935R654UA;
+				INFOPLIST_FILE = BreatheMeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.redstar.BreatheMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreatheMe.app/BreatheMe";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -661,6 +793,15 @@
 			buildConfigurations = (
 				5648490A270DE88900F4F04E /* Debug */,
 				5648490B270DE88900F4F04E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56B1A11B271FAEA5009243CC /* Build configuration list for PBXNativeTarget "BreatheMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B1A11C271FAEA5009243CC /* Debug */,
+				56B1A11D271FAEA5009243CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
