@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ViaodaLibre-Regular.ttf">
+            <string>ViaodaLibre-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="BreatheMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57u-94-f34" customClass="BlurredImageView" customModule="BreatheMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the yoga  breathe training" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-b0-zYZ">
+                                <rect key="frame" x="20" y="64" width="274" height="93.5"/>
+                                <fontDescription key="fontDescription" name="ViaodaLibre-Regular" family="Viaoda Libre" pointSize="33"/>
+                                <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="52" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-8E-xG7" customClass="BlurredButtonView" customModule="BreatheMe" customModuleProvider="target">
+                                <rect key="frame" x="87" y="790" width="240" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnx-HA-Vc7" customClass="MainBreatheButtonView" customModule="BreatheMe" customModuleProvider="target">
+                                <rect key="frame" x="107" y="353" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6f8-kB-9mX"/>
+                                    <constraint firstAttribute="width" constant="200" id="B5s-Dl-SgV"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duP-GD-8cf" customClass="MainBreatheSessionValuesView" customModule="BreatheMe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="229" width="374" height="130"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="By3-Q8-DYA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="57u-94-f34" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="4by-Kv-fnN"/>
+                            <constraint firstItem="rnx-HA-Vc7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8LQ-YE-3fv"/>
+                            <constraint firstItem="57u-94-f34" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hfb-nH-Hx2"/>
+                            <constraint firstAttribute="top" secondItem="57u-94-f34" secondAttribute="top" id="Kh7-zr-WqS"/>
+                            <constraint firstItem="duP-GD-8cf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P9f-dm-uTH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GvX-8E-xG7" secondAttribute="bottom" constant="20" id="Qwv-Ff-Xzl"/>
+                            <constraint firstAttribute="trailing" secondItem="57u-94-f34" secondAttribute="trailing" id="Smi-12-p3f"/>
+                            <constraint firstItem="GvX-8E-xG7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cY1-1x-pAO"/>
+                            <constraint firstItem="rnx-HA-Vc7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kxd-8t-mEr"/>
+                            <constraint firstItem="8Zf-b0-zYZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="lRk-lE-69m"/>
+                            <constraint firstItem="rnx-HA-Vc7" firstAttribute="top" secondItem="duP-GD-8cf" secondAttribute="bottom" constant="-6" id="mJp-DF-4Hb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="duP-GD-8cf" secondAttribute="trailing" constant="20" id="qrV-GH-wuc"/>
+                            <constraint firstItem="8Zf-b0-zYZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rOh-DJ-GuX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="57u-94-f34" id="uIR-47-wrV"/>
+                        <outlet property="breatheButtonView" destination="rnx-HA-Vc7" id="M0U-6K-7Qw"/>
+                        <outlet property="sessionsButtonView" destination="GvX-8E-xG7" id="Cnn-pz-jHN"/>
+                        <outlet property="statisticsView" destination="duP-GD-8cf" id="edv-zc-FFf"/>
+                        <outlet property="welcomeLabel" destination="8Zf-b0-zYZ" id="i5C-sk-gN1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320.28985507246381" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

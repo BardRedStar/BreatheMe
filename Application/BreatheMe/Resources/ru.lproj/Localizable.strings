@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  BreatheMe
+
+  Created by Denis Kovalev on 06.10.2021.
+  
+*/
+
+// Main
+
+"Main-Breathe-Button-Title-Start" = "Подышать";
+"Main-Breathe-Button-Title-Stop" = "Закончить\nупраженение";
+"Main-Sessions-Button-Title" = "Дыхательные сессии";
+"Main-Welcome-Text" = "Приветствую на твоей\nдыхательной тренировке";
+
+// Session
+
+"Session-Inhales-Label" = "Вдохов: ";
+"Session-Exhales-Label" = "Выдохов: ";
+
+// Session List
+
+"SessionList-Title" = "Ваши дыхательные сессии";
+
+// Record List
+
+"RecordList-Title" = "Статистика по сессии";
+
+// Errors
+
+"Error-Cant-Create-Session" = "Невозможно начать новую сессию";
+"Error-Cant-Create-Record" = "Невозможно записать упражнение";
+
+// Alerts
+
+"Alert-Microphone-Permission-Title" = "Разрешение на использование микрофона не получено";
+"Alert-Microphone-Permission-Message" = "Вы отклонили разрешение на использование микрофона. Пожалуйста пройдите в настройки и включите его, чтобы мы смогли услышать ваше дыхание";
+"Alert-Error-Title" = "Упс! Что-то пошло не так";
+"Alert-Email-Unsupported-Message" = "Жаль, но ваше устройство не поддерживает отправку электронных писем";
+"Alert-Button-Cancel" = "Отмена";
+"Alert-Button-Open-Settings" = "В Настройки";
+"Alert-Button-OK" = "Понятно";
+
+// Date/Time
+
+"DateTime-Today" = "Сегодня";
+"DateTime-Yesterday" = "Вчера";
+
+// Share
+
+"Breathe-Type-Unknown" = "Неизвестное упражнение";
+"Breathe-Type-Inhale" = "Вдох";
+"Breathe-Type-Exhale" = "Выдох";
+"Breathe-Type-Delay" = "Задержка дыхания";

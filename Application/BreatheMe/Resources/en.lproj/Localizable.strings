@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  BreatheMe
+
+  Created by Denis Kovalev on 06.10.2021.
+  
+*/
+
+// Main
+
+"Main-Breathe-Button-Title-Start" = "Breathe Me";
+"Main-Breathe-Button-Title-Stop" = "Stop Breathing";
+"Main-Sessions-Button-Title" = "Go to sessions list";
+"Main-Welcome-Text" = "Welcome to the yoga\nbreathe training";
+
+// Session
+
+"Session-Inhales-Label" = "Inhales: ";
+"Session-Exhales-Label" = "Exhales: ";
+
+// Session List
+
+"SessionList-Title" = "Your breathe sessions";
+
+// Record List
+
+"RecordList-Title" = "Detailed Statistics";
+
+// Errors
+
+"Error-Cant-Create-Session" = "Couldn't create new session";
+"Error-Cant-Create-Record" = "Couldn't create new record";
+
+// Alerts
+
+"Alert-Microphone-Permission-Title" = "Microphone permission denied";
+"Alert-Microphone-Permission-Message" = "You've denied the microphone permission. App can't hear your breathe, so, please, go to settings and enable permission from there.";
+"Alert-Error-Title" = "Something went wrong";
+"Alert-Email-Unsupported-Message" = "Sorry, your device doesn't support email sending";
+"Alert-Button-Cancel" = "Cancel";
+"Alert-Button-Open-Settings" = "Open Settings";
+"Alert-Button-OK" = "OK";
+
+// Date/Time
+
+"DateTime-Today" = "Today";
+"DateTime-Yesterday" = "Yesterday";
+
+// Breathe types
+
+"Breathe-Type-Unknown" = "Unknown";
+"Breathe-Type-Inhale" = "Inhale";
+"Breathe-Type-Exhale" = "Exhale";
+"Breathe-Type-Delay" = "Breathe delay";
+
