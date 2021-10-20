@@ -26,8 +26,6 @@ class MainViewController: UIViewController {
     @IBOutlet private var sessionsButtonView: BlurredButtonView!
     @IBOutlet private var statisticsView: MainBreatheSessionValuesView!
 
-    @IBOutlet private var welcomeLabelTopConstraint: NSLayoutConstraint!
-
     // MARK: - Output
 
     var didTapSessions: (() -> Void)?
@@ -95,21 +93,14 @@ class MainViewController: UIViewController {
         }
     }
 
+    /// Performs welcome animation
     private func performWelcomeAnimation() {
         welcomeLabel.alpha = 0
         breatheButtonView.alpha = 0
         sessionsButtonView.alpha = 0
 
-        welcomeLabelTopConstraint.constant = 100
-        view.layoutIfNeeded()
-
         UIView.animate(withDuration: 1.0, delay: 0.5, options: [.curveEaseOut]) { [weak self] in
-
             self?.welcomeLabel.alpha = 1
-
-            self?.welcomeLabelTopConstraint.constant = 20
-            self?.view.layoutIfNeeded()
-
         } completion: { finished in
             if finished {
                 UIView.animate(withDuration: 1.0, delay: 1.0, options: [.curveEaseInOut]) { [weak self] in
@@ -121,6 +112,7 @@ class MainViewController: UIViewController {
 
     }
 
+    /// Sets statistics visible state
     private func setStatisticsVisible(_ isVisible: Bool) {
         viewModel.resetStatisticsValues()
         statisticsView.configureWith(model: viewModel.sessionValuesViewModel())

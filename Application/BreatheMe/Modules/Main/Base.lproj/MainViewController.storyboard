@@ -75,7 +75,6 @@
                         <outlet property="sessionsButtonView" destination="GvX-8E-xG7" id="Cnn-pz-jHN"/>
                         <outlet property="statisticsView" destination="duP-GD-8cf" id="edv-zc-FFf"/>
                         <outlet property="welcomeLabel" destination="8Zf-b0-zYZ" id="i5C-sk-gN1"/>
-                        <outlet property="welcomeLabelTopConstraint" destination="lRk-lE-69m" id="ylN-W0-zlg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

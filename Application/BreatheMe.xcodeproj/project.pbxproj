@@ -228,7 +228,6 @@
 		56484912270DEA1B00F4F04E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				56D54033270DEBBF00EC0C84 /* Sounds */,
 				56D54032270DEBB900EC0C84 /* Fonts */,
 				56484901270DE88900F4F04E /* Assets.xcassets */,
 				56D54035270DEBD600EC0C84 /* Colors.xcassets */,
@@ -295,13 +294,6 @@
 				56B1A124271FE3A4009243CC /* ViaodaLibre-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		56D54033270DEBBF00EC0C84 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 		56D54039270DEC3500EC0C84 /* Main */ = {

@@ -7,8 +7,10 @@
 
 import UIKit
 
+/// A class for fonts
 class Fonts {
 
+    /// Viaoda Libre Regular
     static func viaodaLibreRegular(ofSize size: CGFloat) -> UIFont {
         UIFont(name: "ViaodaLibre-Regular", size: size)!
     }

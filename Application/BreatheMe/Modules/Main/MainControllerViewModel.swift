@@ -77,6 +77,7 @@ class MainControllerViewModel {
 
     // MARK: - Statistics
 
+    /// Processes new stage to statistics
     private func considerStageToStatistics(_ stage: BreatheStage) {
         switch stage {
         case .inhale: inhalesCount += 1
@@ -85,11 +86,13 @@ class MainControllerViewModel {
         }
     }
 
+    /// Reset statistics values to default
     func resetStatisticsValues() {
         inhalesCount = 0
         exhalesCount = 0
     }
 
+    /// Gets statisctics view model
     func sessionValuesViewModel() -> MainBreatheSessionValuesView.ViewModel {
         MainBreatheSessionValuesView.ViewModel(inhales: inhalesCount, exhales: exhalesCount)
     }
