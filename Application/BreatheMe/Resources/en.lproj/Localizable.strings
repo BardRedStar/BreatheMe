@@ -8,8 +8,10 @@
 
 // Main
 
-"Main-Breathe-Button-Title" = "Breathe Me";
-"Main-Sessions-Button-Title" = "Sessions";
+"Main-Breathe-Button-Title-Start" = "Breathe Me";
+"Main-Breathe-Button-Title-Stop" = "Stop Breathing";
+"Main-Sessions-Button-Title" = "Go to sessions list";
+"Main-Welcome-Text" = "Welcome to the yoga\nbreathe training";
 
 // Session List
 
@@ -42,9 +44,9 @@
 "DateTime-Today" = "Today";
 "DateTime-Yesterday" = "Yesterday";
 
-// Share
+// Breathe types
 
-"Share-Breathe-Type-Unknown" = "Unknown";
-"Share-Breathe-Type-Inhale" = "Inhale";
-"Share-Breathe-Type-Exhale" = "Exhale";
-"Share-Breathe-Type-Delay" = "Breathe delay";
+"Breathe-Type-Unknown" = "Unknown";
+"Breathe-Type-Inhale" = "Inhale";
+"Breathe-Type-Exhale" = "Exhale";
+"Breathe-Type-Delay" = "Breathe delay";

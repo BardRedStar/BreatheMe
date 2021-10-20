@@ -23,6 +23,10 @@ class MainControllerViewModel {
     private var currentSession: Session?
     private var currentRecord: Record?
 
+    // Session statistics
+    private var inhalesCount: Int = 0
+    private var exhalesCount: Int = 0
+
     // MARK: - Initialization
 
     init(session: AppSession) {
@@ -55,6 +59,9 @@ class MainControllerViewModel {
     /// Processes new breathe stage. Finishes old if it exists.
     func processBreatheStage(_ stage: BreatheStage) {
         guard let session = currentSession else { return }
+
+        considerStageToStatistics(stage)
+
         currentRecord?.endDate = Date()
 
         appSession.recordRepository.createRecordWith(type: stage.rawValue, startDate: Date(), endDate: nil, attachTo: session) { [weak self] result in
@@ -66,5 +73,24 @@ class MainControllerViewModel {
                 self?.didError?(error)
             }
         }
+    }
+
+    // MARK: - Statistics
+
+    private func considerStageToStatistics(_ stage: BreatheStage) {
+        switch stage {
+        case .inhale: inhalesCount += 1
+        case .exhale: exhalesCount += 1
+        default: break
+        }
+    }
+
+    func resetStatisticsValues() {
+        inhalesCount = 0
+        exhalesCount = 0
+    }
+
+    func sessionValuesViewModel() -> MainBreatheSessionValuesView.ViewModel {
+        MainBreatheSessionValuesView.ViewModel(inhales: inhalesCount, exhales: exhalesCount)
     }
 }

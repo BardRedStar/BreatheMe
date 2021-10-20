@@ -44,7 +44,7 @@ class SessionListCell: SetuppableTableViewCell {
 
     private lazy var durationLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .gray
+        label.textColor = UIColor(named: "primary-dark")
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 1
         return label
@@ -52,7 +52,7 @@ class SessionListCell: SetuppableTableViewCell {
 
     private lazy var inhalesCountLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .gray
+        label.textColor = UIColor(named: "primary-dark")
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 1
         return label
@@ -60,7 +60,7 @@ class SessionListCell: SetuppableTableViewCell {
 
     private lazy var exhalesCountLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .gray
+        label.textColor = UIColor(named: "primary-dark")
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 1
         return label

@@ -32,7 +32,7 @@ class SessionListTableHeaderView: SetuppableTableHeaderFooterView {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 12)
         label.numberOfLines = 1
-        label.textColor = .gray
+        label.textColor = UIColor(named: "primary-dark")
         return label
     }()
 

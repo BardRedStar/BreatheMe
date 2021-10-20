@@ -27,13 +27,15 @@
 		56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0BEF927173995007BA6B4 /* BreatheStage.swift */; };
 		56B1A117271FAEA5009243CC /* BreatheMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A116271FAEA5009243CC /* BreatheMeTests.swift */; };
 		56B1A11E271FAEB7009243CC /* DateTimeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A10E271FAE53009243CC /* DateTimeHelperTests.swift */; };
+		56B1A121271FC9B9009243CC /* BlurredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A120271FC9B9009243CC /* BlurredButtonView.swift */; };
+		56B1A123271FDAAA009243CC /* MainBreatheSessionValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1A122271FDAAA009243CC /* MainBreatheSessionValuesView.swift */; };
 		56D54036270DEBD600EC0C84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D54035270DEBD600EC0C84 /* Colors.xcassets */; };
 		56D5403B270DECB000EC0C84 /* SetuppableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5403A270DECB000EC0C84 /* SetuppableViews.swift */; };
 		56D5404B270DEFCD00EC0C84 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404A270DEFCD00EC0C84 /* AppSession.swift */; };
 		56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5404D270DEFDE00EC0C84 /* DataManager.swift */; };
 		56D54051270DF01B00EC0C84 /* MainControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D54050270DF01B00EC0C84 /* MainControllerViewModel.swift */; };
 		56D54055270DF11A00EC0C84 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D54054270DF11A00EC0C84 /* AppRouter.swift */; };
-		56D54059270DF52400EC0C84 /* MainBreatheButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D54058270DF52400EC0C84 /* MainBreatheButton.swift */; };
+		56D54059270DF52400EC0C84 /* MainBreatheButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D54058270DF52400EC0C84 /* MainBreatheButtonView.swift */; };
 		56D5405D270DF64E00EC0C84 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5405C270DF64E00EC0C84 /* String+Extensions.swift */; };
 		56D54069270DF97700EC0C84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D5406B270DF97700EC0C84 /* Localizable.strings */; };
 		56D74ACE271DC73700587E08 /* RecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74ACD271DC73700587E08 /* RecordListViewController.swift */; };
@@ -85,13 +87,15 @@
 		56B1A114271FAEA5009243CC /* BreatheMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreatheMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B1A116271FAEA5009243CC /* BreatheMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheMeTests.swift; sourceTree = "<group>"; };
 		56B1A118271FAEA5009243CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56B1A120271FC9B9009243CC /* BlurredButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredButtonView.swift; sourceTree = "<group>"; };
+		56B1A122271FDAAA009243CC /* MainBreatheSessionValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBreatheSessionValuesView.swift; sourceTree = "<group>"; };
 		56D54035270DEBD600EC0C84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		56D5403A270DECB000EC0C84 /* SetuppableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuppableViews.swift; sourceTree = "<group>"; };
 		56D5404A270DEFCD00EC0C84 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
 		56D5404D270DEFDE00EC0C84 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		56D54050270DF01B00EC0C84 /* MainControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControllerViewModel.swift; sourceTree = "<group>"; };
 		56D54054270DF11A00EC0C84 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		56D54058270DF52400EC0C84 /* MainBreatheButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBreatheButton.swift; sourceTree = "<group>"; };
+		56D54058270DF52400EC0C84 /* MainBreatheButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBreatheButtonView.swift; sourceTree = "<group>"; };
 		56D5405C270DF64E00EC0C84 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		56D5406A270DF97700EC0C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56D5406D270DF99200EC0C84 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				56701C8B271C1B2C004A0421 /* BlurredImageView.swift */,
+				56B1A120271FC9B9009243CC /* BlurredButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,7 +348,8 @@
 		56D54057270DF50F00EC0C84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56D54058270DF52400EC0C84 /* MainBreatheButton.swift */,
+				56D54058270DF52400EC0C84 /* MainBreatheButtonView.swift */,
+				56B1A122271FDAAA009243CC /* MainBreatheSessionValuesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -505,9 +511,11 @@
 				567FD62E271B29AA00D508A2 /* SessionListTableHeaderView.swift in Sources */,
 				5606B781270F4D5300EA177A /* BreatheRecorder.swift in Sources */,
 				56D74AD0271DC74100587E08 /* RecordListControllerViewModel.swift in Sources */,
+				56B1A123271FDAAA009243CC /* MainBreatheSessionValuesView.swift in Sources */,
 				5696FFF827148624001E6A27 /* BreatheProcessor.swift in Sources */,
 				567FD619271AC1CE00D508A2 /* SessionRepository.swift in Sources */,
 				56D5404E270DEFDE00EC0C84 /* DataManager.swift in Sources */,
+				56B1A121271FC9B9009243CC /* BlurredButtonView.swift in Sources */,
 				56B0BEFA27173995007BA6B4 /* BreatheStage.swift in Sources */,
 				56E27E8B27187B93003E682A /* Record+CoreData.swift in Sources */,
 				56357127271EFDDF00D61325 /* FileIOManager.swift in Sources */,
@@ -519,7 +527,7 @@
 				564848F6270DE88800F4F04E /* AppDelegate.swift in Sources */,
 				56701C8F271C3B4B004A0421 /* Errors.swift in Sources */,
 				56484900270DE88800F4F04E /* BreatheMe.xcdatamodeld in Sources */,
-				56D54059270DF52400EC0C84 /* MainBreatheButton.swift in Sources */,
+				56D54059270DF52400EC0C84 /* MainBreatheButtonView.swift in Sources */,
 				56701C8C271C1B2C004A0421 /* BlurredImageView.swift in Sources */,
 				56E27E8927187B93003E682A /* Session+CoreData.swift in Sources */,
 				56E27EA027188256003E682A /* SessionListViewController.swift in Sources */,

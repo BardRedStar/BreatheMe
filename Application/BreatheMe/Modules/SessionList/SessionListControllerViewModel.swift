@@ -148,7 +148,7 @@ class SessionListControllerViewModel {
                             .map { $0 as! Record }
                             .sorted { $0.startDate < $1.startDate }
                             .map {
-                                let type = BreatheStage(rawValue: $0.type)?.presentationString ?? "Share-Breathe-Type-Unknown".localized()
+                                let type = BreatheStage(rawValue: $0.type)?.presentationString ?? "Breathe-Type-Unknown".localized()
                                 let duration = DateTimeHelper.formattedDuration(from: $0.startDate, to: $0.endDate ?? Date())
                                 return "\(type) - \(duration)"
                             }

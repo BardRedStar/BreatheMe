@@ -15,7 +15,7 @@ class RecordListViewController: UIViewController {
     private lazy var backgroundImageView: BlurredImageView = {
         let view = BlurredImageView()
         view.image = UIImage(named: "background")
-        view.blurAlpha = 0.75
+        view.blurAlpha = 0.6
         return view
     }()
 

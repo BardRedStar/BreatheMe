@@ -40,7 +40,7 @@ class RecordListCell: SetuppableTableViewCell {
 
     private lazy var durationLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .gray
+        label.textColor = UIColor(named: "primary-dark")
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 1
         return label
@@ -48,7 +48,7 @@ class RecordListCell: SetuppableTableViewCell {
 
     private lazy var typeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .gray
+        label.textColor = UIColor(named: "primary-dark")
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 1
         return label

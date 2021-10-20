@@ -44,7 +44,7 @@
 
 // Share
 
-"Share-Breathe-Type-Unknown" = "Неизвестное упражнение";
-"Share-Breathe-Type-Inhale" = "Вдох";
-"Share-Breathe-Type-Exhale" = "Выдох";
-"Share-Breathe-Type-Delay" = "Задержка дыхания";
+"Breathe-Type-Unknown" = "Неизвестное упражнение";
+"Breathe-Type-Inhale" = "Вдох";
+"Breathe-Type-Exhale" = "Выдох";
+"Breathe-Type-Delay" = "Задержка дыхания";

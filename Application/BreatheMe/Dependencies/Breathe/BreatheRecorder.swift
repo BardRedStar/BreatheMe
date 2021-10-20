@@ -96,7 +96,9 @@ class BreatheRecorder {
         let volumeDB = 20 * log10(rms)
         let volumeScaledValue = self.scaledPower(volumeDB)
 
-        didRecordVolumeValue?(volumeScaledValue)
+        DispatchQueue.main.async { [weak self] in
+            self?.didRecordVolumeValue?(volumeScaledValue)
+        }
     }
 
     // MARK: - Utils
