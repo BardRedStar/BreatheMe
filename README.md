@@ -1,10 +1,8 @@
 # Breathe Me
 
-An app for iOS, that helps you to control your breath during yoga lessons. Just start the breathe session and breathe right into a microphone!
+An app for iOS, that helps you control your breath during yoga lessons. Just start the breathe session and breathe right into a microphone!
 
 Also you can simply get your previous breathe sessions, get detailed statistics (number of inhalex, exhales and delays between them), and share it with your coach.
-
-An app was made specially for [Yandex Cup 2021](https://yandex.ru/cup/)
 
 ## Screenshots
 
@@ -27,10 +25,3 @@ English language support
 ## Resources usage
 
 Background image and fonts are free-distributed and were taken from the Internet
-
-## Author
-Denis Kovalev - den.kovalev999@gmail.com / bardgaming@yandex.ru
-
-## Licence
-
-BreatheMe is available under MIT licence. See the [LICENSE](LICENCE.md) file for more info.
